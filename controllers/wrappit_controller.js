@@ -1,13 +1,13 @@
 var express = require("express");
 var router = express.Router();
 
-// Import the model (burger.js) to use its database functions.
-var burger = require("../models/wrappit.js");
+// Import the model (wrappit.js) to use its database functions.
+var wrappit = require("../models/wrappit.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   // selectAll
-  burger.selectAll(function(data) {
+  wrappit.selectAll(function(data) {
     var hbsObject = {
       burgers: data
     };

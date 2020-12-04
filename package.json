@@ -1,0 +1,28 @@
+{
+  "name": "wrappit",
+  "version": "1.0.0",
+  "description": "Wrappit App with MySQL, Node, Express, Handlebars",
+  "main": "server.js",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "handlebars": "^4.7.6",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bryu0116/WrappIt.git"
+  },
+  "author": "Bohdan, Suzanne, Brandon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bryu0116/WrappIt/issues"
+  },
+  "homepage": "https://github.com/bryu0116/WrappIt#readme"
+}
