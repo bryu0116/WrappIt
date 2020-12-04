@@ -1,0 +1,45 @@
+    <div class="flexbox-container">
+
+        <div class="flexbox-item-1">            
+            <img src="https://media.giphy.com/media/WO5qrqJ6s60MHQT1I2/giphy.gif" alt="burgerImg" id="burgerImg">
+            <ul id="uneaten">
+                <h2> Devoure Burger! </h2>
+                {{#each burger}}
+                {{#unless devoured}}
+                {{> burger/burger-block devoured=false}}
+                {{/unless}}
+                {{/each}}
+            </ul>
+
+        </div>
+
+        <div class="flexbox-item-2">
+            
+            <img src="https://media.giphy.com/media/WO5qrqJ6s60MHQT1I2/giphy.gif" alt="burgerImg" id="burgerImg">
+    
+            <h2>Eat Da Burger!!</h2>
+        
+            <form class="burgerInput">
+            <input type="text" id="newBurger" name="burger_name">
+                <div class="flexbox-container">
+                    
+                    <button type="submit" id="burgerBtn">Add Burger</button>
+
+                </div>
+            </form>
+            
+        </div>
+        <div class="flexbox-item-3">
+            <img src="https://media.giphy.com/media/WO5qrqJ6s60MHQT1I2/giphy.gif" alt="burgerImg" id="burgerImg">
+            <ul id="eaten">
+                <h2>You have devoured this burgers: </h2>
+                {{#each burger}}
+                {{#if devoured}}
+                {{!-- > means you're looking in the partials directory --}}
+                {{> burger/burger-block devoured=true}}
+                {{/if}}
+                {{/each}}
+            </ul>
+
+        </div>
+    </div>
