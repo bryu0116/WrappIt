@@ -1,0 +1,13 @@
+body {
+    padding: 1em;
+  }
+  
+  .example {
+    overflow: hidden;
+  }
+  .example > div {
+    transition: all 0.5s ease;
+  }
+  .example > div:hover {
+    transform: scale(1.2)
+  }

@@ -1,45 +1,45 @@
-    <div class="flexbox-container">
+<div class="container">
 
-        <div class="flexbox-item-1">            
-            <img src="https://media.giphy.com/media/WO5qrqJ6s60MHQT1I2/giphy.gif" alt="burgerImg" id="burgerImg">
-            <ul id="uneaten">
-                <h2> Devoure Burger! </h2>
-                {{#each burger}}
-                {{#unless devoured}}
-                {{> burger/burger-block devoured=false}}
-                {{/unless}}
-                {{/each}}
-            </ul>
+  <div class="mx-auto" style="width:300px">
+      <img src="assets/hiclipart.com.png"/>
+  </div>
 
-        </div>
+  <br>
 
-        <div class="flexbox-item-2">
-            
-            <img src="https://media.giphy.com/media/WO5qrqJ6s60MHQT1I2/giphy.gif" alt="burgerImg" id="burgerImg">
-    
-            <h2>Eat Da Burger!!</h2>
-        
-            <form class="burgerInput">
-            <input type="text" id="newBurger" name="burger_name">
-                <div class="flexbox-container">
-                    
-                    <button type="submit" id="burgerBtn">Add Burger</button>
+  <header class="jumbotron">
+    <h1 class="display-4">WrappIt</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+            <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 
-                </div>
-            </form>
-            
-        </div>
-        <div class="flexbox-item-3">
-            <img src="https://media.giphy.com/media/WO5qrqJ6s60MHQT1I2/giphy.gif" alt="burgerImg" id="burgerImg">
-            <ul id="eaten">
-                <h2>You have devoured this burgers: </h2>
-                {{#each burger}}
-                {{#if devoured}}
-                {{!-- > means you're looking in the partials directory --}}
-                {{> burger/burger-block devoured=true}}
-                {{/if}}
-                {{/each}}
-            </ul>
+    <style>
+        .jumbotron {
+            background: url("./public/assets/Holiday-background.jpg") center center / cover no-repeat;
+        }
+    </style>
 
-        </div>
+  </header>
+
+    <button type="button" class="btn btn-secondary btn-lg">Start Your Perfect Gift</button>
+
+
+
+  <div class="row" style="padding-top: 50px">
+    <div class="col-12"> 
+      <div class="addBurger">
+        <h1 class="text-center">Add a burger:</h1>
+      </div>
+      <br>
+        <form class="create-form">
+          <div class="form-row align-items-center">
+            <div class="col-6 offset-3">
+              <input class="form-control" type="text" id="burger-name-input" placeholder="Enter Burger Name">
+            </div>
+            <div class="col-auto">
+              <button type="submit" id="burger-submit" class="btn btn-danger">Add Burger</button>
+            </div>
+          </div>
+        </form>
     </div>
+  </div>
