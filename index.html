@@ -1,111 +1,146 @@
-  
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-		<link rel="stylesheet" href="/assets/css/style.css" type="text/css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-		<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-		<link rel="preconnect" href="https://fonts.gstatic.com"><link href="https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap" rel="stylesheet">
-		
-		<title>WrappIt</title>
-		
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="https://kit.fontawesome.com/941444bb10.js" crossorigin="anonymous"></script>
-        <script src="/assets/js/wrappit.js"></script>
-    
-        <style>
-           .jumbotron {
-                background: url("./public/assets/Holiday-background.jpg") center center / cover repeat;
-            }
-        </style>
-    
-	</head>
-
-</html>
-
-<div class="container">
-  
-    <br>
-  
-    <header class="jumbotron">
-      <h1 class="text-center">WrappIt</h1>
-          <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-          <hr class="my-4">
-          <div class="text-center">
-            <button type="button" class="btn btn-dark btn-lg text-center">
-               Search For Perfect Gift
-            </button>
-          </div>
-    </header>
-
-  
-  
-  
-    <div class="row" style="padding-top: 50px">
-      <div class="col-12"> 
-        <div class="addBurger">
-          <h1 class="text-center">Add a burger:</h1>
-        </div>
-        <br>
-          <form class="create-form">
-            <div class="form-row align-items-center">
-              <div class="col-6 offset-3">
-                <input class="form-control" type="text" id="burger-name-input" placeholder="Enter Burger Name">
-              </div>
-              <div class="col-auto">
-                <button type="submit" id="burger-submit" class="btn btn-danger">Add Burger</button>
-              </div>
-            </div>
-          </form>
-      </div>
-    </div>
-   -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>WrappIt</title>
   <!-- UIkit CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/css/uikit.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/assets/css/style.css">
+  <script src="https://kit.fontawesome.com/941444bb10.js" crossorigin="anonymous"></script>
+
   
 
 <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
     <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
-        <div class="uk-navbar-center uk-text-large">
-               
-            <h1 class="uk-heading-medium">WrappIt</h1>
-     
+        <a class="uk-navbar-item uk-logo" href="#">WrappIt<i class="fas fa-carrot"></i></a>
+        <div class="uk-navbar-right">
+            <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">Learn More</button>
+            <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                        <h3>About WrappIt</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
         </div>
     </nav>
 </div>
 
 
-
 <div class="uk-cover-container">
-  <canvas width="1000" height="1000"></canvas>
-    <img src="./public/assets/holiday-background.jpg" alt="" uk-cover> -->
+  <canvas width="400 " height="600"></canvas>
+    <img src="./public/assets/holiday-background.jpg" alt="" uk-cover> 
     <div class="uk-position-center" id="title">
-        <div class="uk-card uk-card-default">
-            <div class="uk-card-header">
-                <div class="uk-grid-small uk-flex-middle" uk-grid>
-                    <div class="uk-width-expand">
-                        
-                    </div>
+        <div class="uk-card-header uk-text-center">
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <h2 class="uk-card-title">Welcome to WrappIt</h2>
+                    <a class="uk-button uk-button-danger" href="#modal-overflow" uk-toggle>Start Survey</a>
+
+                    <div id="modal-overflow" uk-modal>
+                        <div class="uk-modal-dialog">
+                    
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                    
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Please Answer the Questions Below:</h2>
+                            </div>
+                    
+                            <div class="uk-modal-body" uk-overflow-auto>
+                    
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">1. What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+            
+                                    </div>
+                                </form>
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">2. What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+            
+                                    </div>
+            
+                                
+                                </form>
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title"3. >What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+            
+                                    </div>
+            
+                                
+                                </form>
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">4. What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+            
+                                    </div>
+            
+                                
+                                </form>
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">5. What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+            
+                                    </div>
+            
+                                
+                                </form>
+                            </div>
+                    
+                            <div class="uk-modal-footer uk-text-right">
+                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                <a class="uk-button uk-button-primary" type="button" href="./results.html">Submit</a>
+                            </div>
+                    
+                        </div>
+                    </div>   
                 </div>
             </div>
-            <div class="uk-card-body">
-                <p>WrappIt makes gift giving easier.</p>
-            </div>
-            <div class="uk-card-footer uk-text-center uk-text-large">
-                <a href="#" class="uk-button uk-button-text uk-text-center">SEARCH FOR PERFECT GIFT</a>
-            </div>
         </div>
-    </div>
-    <div>
-    
     </div>
 </div>
 
