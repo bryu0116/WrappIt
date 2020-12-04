@@ -1,25 +1,37 @@
-// Import the ORM to create functions that will interact with the database.
-var orm = require("../config/orm.js");
+"use strict";
 
-var burger = {
-  selectAll: function(cb) {
-    // burgers is table name
-    orm.selectAll("burgers", function(res) {
-      cb(res);
-    });
-  },
-// The variables cols and vals are arrays.
-  insertOne: function(cols, vals, cb) {
-    orm.insertOne("burgers", cols, vals, function(res) {
-      cb(res);
-    });
-  },
-  updateOne: function(objColVals, condition, cb) {
-    orm.updateOne("burgers", objColVals, condition, function(res) {
-      cb(res);
-    });
+// Dependencies
+const fs = require("fs");
+const path = require("path");
+const basename = path.basename(module.filename);
+const Sequelize = require("sequelize");
+const env = process.env.NODE_ENV || "development";
+const config = require(__dirname + "../config/config.json")[env];
+const db = {};
+
+if (config.use_env_variable) {
+  var sequelize = new Sequelize(process.env[config.use_env_variable], config);
+} else {
+  var sequelize = new Sequelize(config.database, config.username, config.password, config);
+}
+
+fs
+  .readdirSync(__dirname)
+  .filter(file => {
+    return (file.indexOf(".") !== 0) && (file !== basename) && (file.slice(-3) === ".js");
+  })
+  .forEach(file => {
+    var model = sequelize["import"](path.join(__dirname, file));
+    db[model.name] = model;
+  });
+
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
   }
-};
+});
 
-// Export the database functions for the controller (burgers_controller.js).
-module.exports = burger;
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
+
+module.exports = db;
