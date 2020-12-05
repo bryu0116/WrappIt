@@ -1,3 +1,4 @@
+
 $(document).on("click", ".devourBtn", function () {
     var id = $(this).data("id");
     var newDevour = $(this).data("devour");
