@@ -1,0 +1,118 @@
+
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+    <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
+        <a class="uk-navbar-item uk-logo" href="#">WrappIt<i class="fas fa-carrot"></i></a>
+        <div class="uk-navbar-right">
+            <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">Learn More</button>
+            <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                        <h3>About WrappIt</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<div class="uk-cover-container">
+  <canvas width="400 " height="600"></canvas>
+    <img src="./public/assets/holiday-background.jpg" alt="" uk-cover> 
+    <div class="uk-position-center" id="title">
+        <div class="uk-card-header uk-text-center">
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <h2 class="uk-card-title">Welcome to WrappIt</h2>
+                    <a class="uk-button uk-button-danger" href="#modal-overflow" uk-toggle>Start Survey</a>
+                    <div id="modal-overflow" uk-modal>
+                        <div class="uk-modal-dialog">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Please Answer the Questions Below:</h2>
+                            </div>
+                            <div class="uk-modal-body" uk-overflow-auto>
+                                <form class="uk-form-stacked">
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">1. What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="uk-form-stacked">
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">2. What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="uk-form-stacked">
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title"3. >What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+                                    </div>
+                                </form>
+                                <form class="uk-form-stacked">
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">4. What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+                                    </div>  
+                                </form>
+                                <form class="uk-form-stacked">
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">5. What is your relationship to the giftee?</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                    
+                            <div class="uk-modal-footer uk-text-right">
+                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                                <a class="uk-button uk-button-primary" type="button" href="./results.html">Submit</a>
+                            </div>
+                    
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+   
+ 
+  <!-- UIkit JS -->
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>
