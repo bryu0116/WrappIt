@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,39 +13,74 @@
 
   
 
-  <body>
-
-    <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
-        <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
-            <a class="uk-navbar-item uk-logo" href="#">WrappIt<i class="fas fa-carrot"></i></a>
-            <div class="uk-navbar-right">
-                <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">Learn More</button>
-                <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
-                    <div class="uk-offcanvas-bar">
-                        <button class="uk-offcanvas-close" type="button" uk-close></button>
-                            <h3>About WrappIt</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                    </div>
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
+    <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
+        <a class="uk-navbar-item uk-logo" href="#">WrappIt<i class="fas fa-carrot"></i></a>
+        <div class="uk-navbar-right">
+            <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">About WrappIt</button>
+            <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
+                <div class="uk-offcanvas-bar">
+                    <button class="uk-offcanvas-close" type="button" uk-close></button>
+                        <h3>About WrappIt</h3>
+                        <p>WrappIt is an easy to use gift suggestion application.</p>
                 </div>
             </div>
-        </nav>
-    </div>
-
-    <div class="uk-child-width-1-2@s" uk-grid>
-        <div>
-            <div class="uk-card uk-card-default uk-card-small uk-card-body">
-                <h3 class="uk-card-title">Small</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
         </div>
-        <div>
-            <div class="uk-card uk-card-default uk-card-large uk-card-body">
-                <h3 class="uk-card-title">Large</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-        </div>
-    </div>
+    </nav>
+</div>
 
+<div class="uk-cover-container">
+    <canvas width="400 " height="600"></canvas>
+      <img src="./public/assets/holiday-background.jpg" alt="" uk-cover> 
+      <div class="uk-position-center" id="title">
+          <div class="uk-card-header uk-text-center">
+              <div>
+                <div class="uk-section uk-section-muted">
+                    <div class="uk-container uk-text-center">
+                
+                        <h2>WrappIt Gift Suggestions <i class="fas fa-carrot"></i></h2>
+                
+                        <div class="uk-child-width-1-3@m" uk-grid uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300; repeat: true">
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <h3 class="uk-card-title">Books</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body" uk-scrollspy-class="uk-animation-slide-top">
+                                    <h3 class="uk-card-title">Movies</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-card uk-card-default uk-card-body">
+                                    <h3 class="uk-card-title">Home & Garden</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+              </div>
+          </div>
+
+          <div class="row">
+            <div class="col m12 valign">
+              <!-- This card is hidden using the ".hide" class - when script.js loads results, this class will be removed -->
+              <div id="results-div" class="card hide"> 
+                <div class="card-content ">
+                  <span id="results-header" class="card-title center-align"><!-- script will add a header here --></span>
+                  <div id="results-content">
+                    <!-- script will append results here -->
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      
+
+     
+          
   <!-- UIkit JS -->
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit-icons.min.js"></script>
