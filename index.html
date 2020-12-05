@@ -17,12 +17,12 @@
     <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
         <a class="uk-navbar-item uk-logo" href="#">WrappIt<i class="fas fa-carrot"></i></a>
         <div class="uk-navbar-right">
-            <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">Learn More</button>
+            <button class="uk-button uk-button-default" type="button" uk-toggle="target: #offcanvas-flip">About WrappIt</button>
             <div id="offcanvas-flip" uk-offcanvas="flip: true; overlay: true">
                 <div class="uk-offcanvas-bar">
                     <button class="uk-offcanvas-close" type="button" uk-close></button>
                         <h3>About WrappIt</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        <p>WrappIt is an easy to use gift suggestion application.</p>
                 </div>
             </div>
         </div>
@@ -37,108 +37,125 @@
         <div class="uk-card-header uk-text-center">
             <div>
                 <div class="uk-card uk-card-default uk-card-body">
-                    <h2 class="uk-card-title">Welcome to WrappIt</h2>
-                    <a class="uk-button uk-button-danger" href="#modal-overflow" uk-toggle>Start Survey</a>
+                    <h2 class="uk-card-title">Who is the Recipient?</h2>
+        
+                        <p uk-margin>
+                            <a class="uk-button uk-button-default" href="#modal-group-1" uk-toggle>Him</a>
+                            <a class="uk-button uk-button-default" href="#modal-group-2" uk-toggle>Her</a>
+                            <a class="uk-button uk-button-default" href="#modal-group-3" uk-toggle>Teen</a>
+                            <a class="uk-button uk-button-default" href="#modal-group-4" uk-toggle>Kid</a>
+                        </p>
+                        
+                        <div id="modal-group-1" uk-modal>
+                            <div class="uk-modal-dialog">
+                                <button class="uk-modal-close-default" type="button" uk-close></button>
+                                <div class="uk-modal-header">
+                                    <h2 class="uk-modal-title">Him</h2>
+                                </div>
+                                <div class="uk-modal-body">
+                                    <form class="uk-form-stacked">
 
-                    <div id="modal-overflow" uk-modal>
-                        <div class="uk-modal-dialog">
-                    
-                            <button class="uk-modal-close-default" type="button" uk-close></button>
-                    
-                            <div class="uk-modal-header">
-                                <h2 class="uk-modal-title">Please Answer the Questions Below:</h2>
+                                        <div class="uk-margin">
+                                            <h2 class="uk-card-title">Please Choose Gift Category</h2>
+                                            <div class="uk-form-controls">
+                                                <label><input class="uk-radio" type="radio" name="radio1"> Books</label><br>
+                                                <label><input class="uk-radio" type="radio" name="radio2"> Movies</label><br>
+                                                <label><input class="uk-radio" type="radio" name="radio3"> Home & Garden</label><br>
+                                                <label><input class="uk-radio" type="radio" name="radio4"> Electronics</label><br>
+                                                <label><input class="uk-radio" type="radio" name="radio5"> Toys & Games</label><br>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="uk-modal-footer uk-text-right">
+                                    <a href="#modal-group-1" class="uk-button uk-button-danger uk-modal-close" id="category1" uk-toggle>Submit</a>
+                                </div>
                             </div>
-                    
-                            <div class="uk-modal-body" uk-overflow-auto>
-                    
-                                <form class="uk-form-stacked">
-
-                                    <div class="uk-margin">
-                                        <h2 class="uk-card-title">1. What is your relationship to the giftee?</h2>
-                                        <div class="uk-form-controls">
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
-                                        </div>
-            
-                                    </div>
-                                </form>
-                                <form class="uk-form-stacked">
-
-                                    <div class="uk-margin">
-                                        <h2 class="uk-card-title">2. What is your relationship to the giftee?</h2>
-                                        <div class="uk-form-controls">
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
-                                        </div>
-            
-                                    </div>
-            
-                                
-                                </form>
-                                <form class="uk-form-stacked">
-
-                                    <div class="uk-margin">
-                                        <h2 class="uk-card-title"3. >What is your relationship to the giftee?</h2>
-                                        <div class="uk-form-controls">
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
-                                        </div>
-            
-                                    </div>
-            
-                                
-                                </form>
-                                <form class="uk-form-stacked">
-
-                                    <div class="uk-margin">
-                                        <h2 class="uk-card-title">4. What is your relationship to the giftee?</h2>
-                                        <div class="uk-form-controls">
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
-                                        </div>
-            
-                                    </div>
-            
-                                
-                                </form>
-                                <form class="uk-form-stacked">
-
-                                    <div class="uk-margin">
-                                        <h2 class="uk-card-title">5. What is your relationship to the giftee?</h2>
-                                        <div class="uk-form-controls">
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Mom</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Dad</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Brother</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
-                                            <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
-                                        </div>
-            
-                                    </div>
-            
-                                
-                                </form>
-                            </div>
-                    
-                            <div class="uk-modal-footer uk-text-right">
-                                <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                                <a class="uk-button uk-button-primary" type="button" href="./results.html">Submit</a>
-                            </div>
-                    
                         </div>
-                    </div>   
-                </div>
+                    </div>
+                    
+                              
+                    <div id="modal-group-2" uk-modal>
+                        <div class="uk-modal-dialog">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Her</h2>
+                            </div>
+                            <div class="uk-modal-body">
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">Please Choose Gift Category</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Books</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio2"> Movies</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio3"> Home & Garden</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio4"> Electronics</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio5"> Toys & Games</label><br>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="uk-modal-footer uk-text-right">
+                                <a href="#modal-group-2" class="uk-button uk-button-danger uk-modal-close" id="category2" uk-toggle>Submit</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modal-group-3" uk-modal>
+                        <div class="uk-modal-dialog">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Teen</h2>
+                            </div>
+                            <div class="uk-modal-body">
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">Please Choose Gift Category</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Books</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio2"> Movies</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio3"> Home & Garden</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio4"> Electronics</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio5"> Toys & Games</label><br>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="uk-modal-footer uk-text-right">
+                                <a href="#modal-group-3" class="uk-button uk-button-danger uk-modal-close" id="category3" uk-toggle>Submit</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="modal-group-4" uk-modal>
+                        <div class="uk-modal-dialog">
+                            <button class="uk-modal-close-default" type="button" uk-close></button>
+                            <div class="uk-modal-header">
+                                <h2 class="uk-modal-title">Kid</h2>
+                            </div>
+                            <div class="uk-modal-body">
+                                <form class="uk-form-stacked">
+
+                                    <div class="uk-margin">
+                                        <h2 class="uk-card-title">Please Choose Gift Category</h2>
+                                        <div class="uk-form-controls">
+                                            <label><input class="uk-radio" type="radio" name="radio1"> Books</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio2"> Movies</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio3"> Home & Garden</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio4"> Electronics</label><br>
+                                            <label><input class="uk-radio" type="radio" name="radio5"> Toys & Games</label><br>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="uk-modal-footer uk-text-right">
+                                <a href="#modal-group-4" class="uk-button uk-button-danger uk-modal-close" id="category4" uk-toggle>Submit</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>    
             </div>
         </div>
     </div>
