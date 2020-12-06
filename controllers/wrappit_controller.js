@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 // Import the model (wrappit.js) to use its database functions.
-var wrappit = require("../models/wrappit.js");
+var wrappit = require("../models/index.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {

@@ -4,28 +4,14 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: false,
             validate: {
-                len: [1, 50]
+                len: [1, 10]
             }
         },
-        relation: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [1, 50]
-            }
-        },
-        personality: DataTypes.STRING,
-        music: DataTypes.STRING,
-        books: DataTypes.STRING,
-        movies: DataTypes.STRING,
-        clothing_size: DataTypes.STRING,
-        user_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: User,
-              key: 'id', 
-            }
-        }
+        music_genre: DataTypes.STRING,
+        books_genre: DataTypes.STRING,
+        movies_genre: DataTypes.STRING
+    }, {
+        timestamps: false
     });
 
     Giftee.associate = function(models) {

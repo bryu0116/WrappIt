@@ -6,13 +6,6 @@ module.exports = function(sequelize, DataTypes) {
             validate: {
                 len: [1, 255]
             }
-        },
-        gift_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: Gift,
-              key: 'id', 
-            }
         }
     });
 

@@ -1,3 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WrappIt</title>
+  <!-- UIkit CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/css/uikit.min.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/assets/css/style.css">
+  <script src="https://kit.fontawesome.com/941444bb10.js" crossorigin="anonymous"></script>
+
+  
 
 <div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; bottom: #transparent-sticky-navbar">
     <nav class="uk-navbar-container" uk-navbar style="position: relative; z-index: 980;">
@@ -25,14 +39,20 @@
                 <div class="uk-card uk-card-default uk-card-body">
                     <h2 class="uk-card-title">Welcome to WrappIt</h2>
                     <a class="uk-button uk-button-danger" href="#modal-overflow" uk-toggle>Start Survey</a>
+
                     <div id="modal-overflow" uk-modal>
                         <div class="uk-modal-dialog">
+                    
                             <button class="uk-modal-close-default" type="button" uk-close></button>
+                    
                             <div class="uk-modal-header">
                                 <h2 class="uk-modal-title">Please Answer the Questions Below:</h2>
                             </div>
+                    
                             <div class="uk-modal-body" uk-overflow-auto>
+                    
                                 <form class="uk-form-stacked">
+
                                     <div class="uk-margin">
                                         <h2 class="uk-card-title">1. What is your relationship to the giftee?</h2>
                                         <div class="uk-form-controls">
@@ -42,9 +62,11 @@
                                             <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
                                             <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
                                         </div>
+            
                                     </div>
                                 </form>
                                 <form class="uk-form-stacked">
+
                                     <div class="uk-margin">
                                         <h2 class="uk-card-title">2. What is your relationship to the giftee?</h2>
                                         <div class="uk-form-controls">
@@ -54,9 +76,13 @@
                                             <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
                                             <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
                                         </div>
+            
                                     </div>
+            
+                                
                                 </form>
                                 <form class="uk-form-stacked">
+
                                     <div class="uk-margin">
                                         <h2 class="uk-card-title"3. >What is your relationship to the giftee?</h2>
                                         <div class="uk-form-controls">
@@ -66,9 +92,13 @@
                                             <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
                                             <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
                                         </div>
+            
                                     </div>
+            
+                                
                                 </form>
                                 <form class="uk-form-stacked">
+
                                     <div class="uk-margin">
                                         <h2 class="uk-card-title">4. What is your relationship to the giftee?</h2>
                                         <div class="uk-form-controls">
@@ -78,9 +108,13 @@
                                             <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
                                             <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
                                         </div>
-                                    </div>  
+            
+                                    </div>
+            
+                                
                                 </form>
                                 <form class="uk-form-stacked">
+
                                     <div class="uk-margin">
                                         <h2 class="uk-card-title">5. What is your relationship to the giftee?</h2>
                                         <div class="uk-form-controls">
@@ -90,7 +124,10 @@
                                             <label><input class="uk-radio" type="radio" name="radio1"> Sister</label><br>
                                             <label><input class="uk-radio" type="radio" name="radio1"> Significant Other</label><br>
                                         </div>
+            
                                     </div>
+            
+                                
                                 </form>
                             </div>
                     
@@ -105,6 +142,34 @@
             </div>
         </div>
     </div>
+</div>
+
+
+<div class="uk-section uk-section-muted">
+    <div class="uk-container uk-text-center">
+
+        <h2>How Does WrappIt Work <i class="fas fa-carrot"></i></h2>
+
+        <div class="uk-child-width-1-3@m" uk-grid uk-scrollspy="cls: uk-animation-slide-bottom; target: .uk-card; delay: 300; repeat: true">
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <h3 class="uk-card-title">First Step</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body" uk-scrollspy-class="uk-animation-slide-top">
+                    <h3 class="uk-card-title">Second Step</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+            <div>
+                <div class="uk-card uk-card-default uk-card-body">
+                    <h3 class="uk-card-title">Third Step</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                </div>
+            </div>
+        </div>
 </div>
 
 

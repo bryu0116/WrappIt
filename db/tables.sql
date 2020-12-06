@@ -6,13 +6,10 @@ CREATE TABLE users (
 
 CREATE TABLE giftees (
     id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    giftee VARCHAR(50) NOT NULL,
-    relation VARCHAR(50) NOT NULL,
-    personality VARCHAR(50),
+    for_whom VARCHAR(10) NOT NULL,
     music VARCHAR(50),
     books VARCHAR(50),
     movies VARCHAR(50),
-    clothing_size VARCHAR(5),
     FOREIGN KEY (user_id) REFERENCES users(id)
 )
 

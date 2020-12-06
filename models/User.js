@@ -16,6 +16,8 @@ module.exports = function(sequelize, DataTypes) {
             isEmail: true
         }
       }
+    }, {
+      timestamps: false
     });
 
     User.associate = function(models) {

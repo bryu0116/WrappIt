@@ -2,15 +2,15 @@
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 8080;
-let db;
+let db = require("./models");
 // Requiring our models for syncing
 
-if (process.env.JAWSDB_URL) {
-  console.log("There is a JAWS DB URL");
-  db = new Sequelize(process.env.JAWSDB_URL);
-} else {
-  db = require("./models").sequelize;
-}
+// if (process.env.JAWSDB_URL) {
+//   console.log("There is a JAWS DB URL");
+//   db = new Sequelize(process.env.JAWSDB_URL);
+// } else {
+//   db = require("./models").sequelize;
+// }
 // Serve static content from the "public" dir.
 app.use(express.static("public"));
 
@@ -30,7 +30,7 @@ var routes = require("./controllers/wrappit_controller.js");
 
 app.use(routes);
 
-db.sync({ force: true }).then(function() {
+db.sequelize.sync({ force: true }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
