@@ -2,13 +2,13 @@ let booksArray = [];
 getBooks();
 let moviesArray = [];
 getMovies();
-let homeArray = [];
+let musicArray = [];
 getArt();
-let artArray = [];
-getElectronics();
-let electronicsArray = [];
-getToys();
 let toysArray = [];
+getElectronics();
+let artArray = [];
+getToys();
+let cookingArray = [];
 
 
 // "Show Books" button listener
@@ -88,7 +88,7 @@ function getBooks() {
         console.log("News:", booksArray);
 
 		// Unhide the "show results" link & show how many results there are
-		$("#book-title").text(place + " in the News (" + newsArray.length + ")");
+		$("#book-title").
         $("#book-action").removeClass("uk-hidden");
     });
 }
