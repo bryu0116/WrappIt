@@ -4,45 +4,45 @@ INSERT INTO users (username, email) VALUES ("joker", "jo@ker.io");
 INSERT INTO users (username, email) VALUES ("sabotage", "sabo@tage.io");
 
 -- Giftees
-INSERT INTO giftees (giftee, relation, personality, music, books, movies, clothing_size, user_id)
-VALUES ("Severus", "brother", "quirky", "ska", "dystopian fiction", "dark comedy", "L", 3);
+INSERT INTO giftees (giftee, music_genre, books_genre, movies_genre, UserId)
+VALUES ("kid", "ska", "dystopian fiction", "dark comedy", 3);
 
-INSERT INTO giftees (giftee, relation, personality, music, books, movies, clothing_size, user_id)
-VALUES ("Sonny", "friend", "conventional", "pop rock", "self-help", "action", "XL", 2);
+INSERT INTO giftees (giftee, music_genre, books_genre, movies_genre, UserId)
+VALUES ("her", "pop rock", "self-help", "romantic comedy", 2);
 
-INSERT INTO giftees (giftee, relation, personality, music, books, movies, clothing_size, user_id)
-VALUES ("Veronica", "girlfriend", "mysterious", "alternative", "novels", "documentary", "M", 1);
+INSERT INTO giftees (giftee, music_genre, books_genre, movies_genre, UserId)
+VALUES ("her", "alternative", "novels", "documentary", 1);
 
-INSERT INTO giftees (giftee, relation, personality, music, books, movies, clothing_size, user_id)
-VALUES ("Dad", "father", "cerebral", "classical", "philosophy", "foreign", "L", 1);
+INSERT INTO giftees (giftee, music_genre, books_genre, movies_genre, UserId)
+VALUES ("him", "classical", "philosophy", "foreign", 1);
 
 -- Gifts
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
-VALUES ("back scratcher", "a wooden tool that helps scrath an itch on one's back", 1);
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
-VALUES ("", "", 1);
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
-VALUES ("", "", 1);
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
+VALUES ("The Skatalites", "A classic album by the original ska veterans", 1);
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
+VALUES ("1984", "George Orwell's dystopian vision of a totalitarian dictatorship where nothing is true, war is peace, language is abused, and intimacy is forbidden", 1);
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
+VALUES ("The Dead Don't Die", "Jim Jarmousch's absurdist take on the genre of zombie movies, with a socially-critical subtext", 1);
 
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 2);
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 2);
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 2);
 
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 3);
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 3);
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 3);
 
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 4);
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 4);
-INSERT INTO gifts (gift, gift_desc, giftee_id) 
+INSERT INTO gifts (gift, gift_desc, GifteeId) 
 VALUES ("", "", 4);
 
 -- URLs 
