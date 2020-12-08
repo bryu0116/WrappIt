@@ -16,7 +16,7 @@ module.exports = function(sequelize, DataTypes) {
         giftee_id: {
             type: DataTypes.INTEGER,
             references: {
-              model: Giftee,
+              model: "Giftee",
               key: 'id', 
             }
         }
