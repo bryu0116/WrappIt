@@ -4,8 +4,14 @@ $(document).ready(function() {
     getBooks();
     let moviesArray = [];
     getMovies();
-    let artArray = [];
-    getArt();
+    let homeArray = [];
+    getHome();
+    let cookingArray = [];
+    getCooking();
+    let gamesArray = [];
+    getGames();
+    let makeupArray = [];
+    getMakeup();
     
 // Event listeners
     $(document).on("click", "input#books", showBooks);
@@ -142,42 +148,210 @@ $(document).ready(function() {
         });
     }   
 
-    // Art - Harvard Art Museums API
-    function getArt() {
-        var queryURL = "https://api.harvardartmuseums.org/publication?q=publicationyear=2020&size=50&apikey=ad869fde-b267-4f1d-bf87-6a7b86478a0c";
-
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function(response) {
-            console.log(response);
-            let results = response.records;
-            for (let i = 0; i < results.length; i++) {
-                let newArt = {
-                    title: results[i].title,   
-                    url: results[i].publicationplace, 
-                };
-                artArray.push(newArt);
-            }
-            console.log("Art:", artArray);
-        });
-    }
-    
-    function showArt() {
-            $("#results-header3").text("Harvard Art Museum Publications");
-            $("#results-content3").empty();
+  // "Show Home Decor" button listener
+// Need to fix image
+$("#home").on("click", function () {
+    $("#results-header3").text("Home Decor");
+    const resultsDiv = $("#results-content3");
+    resultsDiv.empty();
+    for(let i = 0; i < homeArray.length; i++) {
+        let homeDiv = $("<div class='home'>");
+            let imageDiv = $("<div class='homeImg'>");
+                let homeImg = $("<img class='home-cover'>");
+                homeImg.attr("src", homeArray[i].StockPhotoURL);
+                homeImg.attr("alt", "Image of " + homeArray[i].Title);
+                imageDiv.append(homeImg);
+            homeDiv.append(imageDiv);
             
-            for(let i = 0; i < artArray.length; i++) {
-                let titleDiv = $("<a class='text-bold'>" + artArray[i].title + "</a>");
-                titleDiv.attr("href", artArray[i].url);
-                titleDiv.attr("target", "_blank");
-                $("#results-content3").append(titleDiv);
-                let nameDiv = $("<div>Title: " + artArray[i].title + "</div>");
-                $("#results-content3").append(nameDiv);
-                $("#results-content3").append($("<hr class='uk-divider-large'></hr>"));
-            }
-            $("#results-div3").removeClass("uk-hidden");
+            let textDiv = $("<div class='homeInfo'>");
+                let titleLink = $("<a class='text-bold'>" + homeArray[i].Title + "</a>");
+                    titleLink.attr("href", homeArray[i].DetailsURL)
+                    titleLink.attr("target", "_blank");
+                textDiv.append(titleLink);
+        
+
+        resultsDiv.append(homeDiv);
+        resultsDiv.append($("<hr class='uk-divider-large'>"));
     }
+    $("#results-div3").removeClass("uk-hidden");
+});
+
+// "Show Cookbooks" button listener
+// Need to fix image
+$("#cooking").on("click", function () {
+    $("#results-header4").text("Cookbooks");
+    const resultsDiv = $("#results-content4");
+    resultsDiv.empty();
+    for(let i = 0; i < cookingArray.length; i++) {
+        let cookingDiv = $("<div class='home'>");
+            let imageDiv = $("<div class='homeImg'>");
+                let homeImg = $("<img class='home-cover'>");
+                homeImg.attr("src", cookingArray[i].StockPhotoURL);
+                homeImg.attr("alt", "Image of " + cookingArray[i].Title);
+                imageDiv.append();
+            cookingDiv.append(imageDiv);
+            
+            let textDiv = $("<div class='homeInfo'>");
+                let titleLink = $("<a class='text-bold'>" + cookingArray[i].Title + "</a>");
+                    titleLink.attr("href", cookingArray[i].DetailsURL)
+                    titleLink.attr("target", "_blank");
+                textDiv.append(titleLink);
+        
+
+        resultsDiv.append(cookingDiv);
+        resultsDiv.append($("<hr class='uk-divider-large'>"));
+    }
+    $("#results-div4").removeClass("uk-hidden");
+});
+
+//"Show Makeup" button listener
+// need to get image to load
+$("#makeup").on("click", function () {
+	$("#results-header5").text("Makeup");
+    const resultsDiv = $("#results-content5");
+    resultsDiv.empty();
+    for(let i = 0; i < makeupArray.length; i++) {
+        let makeupDiv = $("<div class='makeup'>");
+        let imageDiv = $("<div class='makeupImg'>");
+            let makeupImg = $("<img class='makeup-cover'>");
+            makeupImg.attr("src", makeupArray[i].image);
+            makeupImg.attr("alt", "Image of " + makeupArray[i].title);
+            imageDiv.append();
+        makeupDiv.append(imageDiv);
+
+		let titleDiv = $("<a class='text-bold'>" + makeupArray[i].title + "</a>");
+		titleDiv.attr("href", makeupArray[i].url)
+		titleDiv.attr("target", "_blank");
+		$("#results-content5").append(titleDiv);
+	
+		resultsDiv.append(titleDiv);
+		resultsDiv.append($("<hr class='uk-divider-large'>"));
+	}
+	$("#results-div5").removeClass("uk-hidden");
+});
+
+// "Show Video Games" button listener
+// Need to fix image
+$("#games").on("click", function () {
+    $("#results-header6").text("Video Games & Consoles");
+    const resultsDiv = $("#results-content6");
+    resultsDiv.empty();
+    for(let i = 0; i < gamesArray.length; i++) {
+        let gamesDiv = $("<div class='games'>");
+            let imageDiv = $("<div class='gamesImg'>");
+                let gamesImg = $("<img class='games-cover'>");
+                gamesImg.attr("src", gamesArray[i].StockPhotoURL);
+                gamesImg.attr("alt", "Image of " + gamesArray[i].Title);
+                imageDiv.append();
+            gamesDiv.append(imageDiv);
+            
+            let textDiv = $("<div class='gamesInfo'>");
+                let titleLink = $("<a class='text-bold'>" + gamesArray[i].Title + "</a>");
+                    titleLink.attr("href", gamesArray[i].DetailsURL)
+                    titleLink.attr("target", "_blank");
+                textDiv.append(titleLink);
+        
+
+        resultsDiv.append(gamesDiv);
+        resultsDiv.append($("<hr class='uk-divider-large'>"));
+    }
+    $("#results-div6").removeClass("uk-hidden");
+});
+
+function getHome() {
+	var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=homedecor&AvailableItemsOnly=true&MaxEntries=10";
+    
+    $.ajax({
+		url: queryURL,
+		method: "GET"
+    }).then(function(response) {
+        let jsonResponse = JSON.parse(response)
+         let results = jsonResponse.Product;
+        // Iterate through the result and build a cleaner array of objects representing home decor on the list
+        for (let i = 0; i < results.length; i++) {
+            let newHome = {
+                title: results[i].Title,  
+                url: results[i].DetailsURL,
+                image: results[i].StockPhotoURL
+            };
+            homeArray.push(newHome);
+        };
+        console.log("Home Decor:", homeArray);
+    
+    });
+}
+
+// Function that accesses the eBay API given a string representing their cookbook search, and builds an array of objects with only the key values we care about
+function getCooking() {
+	var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=cookbooks&AvailableItemsOnly=true&MaxEntries=10"
+    
+    $.ajax({
+		url: queryURL,
+		method: "GET"
+    }).then(function(response) {
+        let jsonResponse = JSON.parse(response)
+         let results = jsonResponse.Product;
+        // Iterate through the result and build a cleaner array of objects representing each cookbook on the list
+        for (let i = 0; i < results.length; i++) {
+            let newCooking = {
+                title: results[i].Title,  
+                url: results[i].DetailsURL,
+                image: results[i].StockPhotoURL
+            };
+            cookingArray.push(newCooking);
+        };
+        console.log("eBay Cookbooks:", cookingArray);
+    
+    });
+}
+
+
+// Function that accesses the eBay API given a string representing their games search, and builds an array of objects with only the key values we care about
+function getGames() {
+	var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=games&AvailableItemsOnly=true&MaxEntries=10"
+    
+    $.ajax({
+		url: queryURL,
+		method: "GET"
+    }).then(function(response) {
+        let jsonResponse = JSON.parse(response)
+         let results = jsonResponse.Product;
+        // Iterate through the result and build a cleaner array of objects representing each video game & console on the list
+        for (let i = 0; i < results.length; i++) {
+            let newGames = {
+                title: results[i].Title,  
+                url: results[i].DetailsURL,
+                image: results[i].StockPhotoURL
+            };
+            gamesArray.push(newGames);
+        };
+        console.log("Video Games:", gamesArray);
+    
+    });
+}
+// Function that accesses the eBay API given a string representing their makeup search, and builds an array of objects with only the key values we care about
+function getMakeup() {
+	var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=makeup&AvailableItemsOnly=true&MaxEntries=10"
+    
+    $.ajax({
+		url: queryURL,
+		method: "GET"
+    }).then(function(response) {
+        let jsonResponse = JSON.parse(response)
+         let results = jsonResponse.Product;
+        // Iterate through the result and build a cleaner array of objects representing each makeup item on the list
+        for (let i = 0; i < results.length; i++) {
+            let newMakeup = {
+                title: results[i].Title,  
+                url: results[i].DetailsURL,
+                image: results[i].StockPhotoURL
+            };
+            makeupArray.push(newMakeup);
+        };
+        console.log("Makeup:", makeupArray);
+    
+    });
+}
 
 // CRUD 
     
