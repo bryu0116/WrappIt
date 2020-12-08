@@ -2,8 +2,8 @@ let booksArray = [];
 getBooks();
 let moviesArray = [];
 getMovies();
-let artArray = [];
-getArt();
+let homeArray = [];
+getHome();
 
 // "Show Books" button listener
 $("#books").on("click", function () {
@@ -76,21 +76,42 @@ $("#movies").on("click", function () {
     $("#results-div2").removeClass("uk-hidden");
 });
 
-// "Show Art" button listener
-$("#art").on("click", function () {
-    $("#results-header3").text("Harvard Art Museum Publications");
-    $("#results-content3").empty();
-    for(let i = 0; i < artArray.length; i++) {
-        let titleDiv = $("<a class='text-bold'>" + artArray[i].title + "</a>");
-        titleDiv.attr("href", artArray[i].url);
-        titleDiv.attr("target", "_blank");
-        $("#results-content3").append(titleDiv);
-        let nameDiv = $("<div>Title: " + artArray[i].title + "</div>");
-        $("#results-content3").append(nameDiv);
-        $("#results-content3").append($("<hr class='uk-divider-large'></hr>"));
-    }
-    $("#results-div3").removeClass("uk-hidden");
-});
+// // "Show Home Decor" button listener
+// $("#home").on("click", function () {
+//     $("#results-header3").text("Home Decor");
+//     const resultsDiv = $("#results-content3");
+//     resultsDiv.empty();
+//     for(let i = 0; i < homeArray.length; i++) {
+//         let homeDiv = $("<div class='home'>");
+//             let homeDesc = $("<div class='movie-description'>");
+//                 let imageDiv = $("<div class='homeImg'>");
+//                     let homeImg = $("<img class='home-cover'>");
+//                     homeImg.attr("src", homeArray[i].image_url);
+//                     homeImg.attr("alt", "Image of '" + homeArray[i].title + "'");
+//                     homeImg.append(homeImg);
+//                 homeDesc.append(imageDiv);
+            
+//                 let textDiv = $("<div class='homeInfo'>");
+//                     let title = $("<div class='text-bold'>" + homeArray[i].Title + "</div>");
+//                     textDiv.append(Title);
+//                     let descDiv = $("<div class='homeDesc'>" + homeArray[i].description + "</div>");
+//                     textDiv.append(descDiv);               
+//                 homeDesc.append(textDiv);
+//             homeDiv.append(homeDesc); 
+                
+//             let reviewDiv = $("<div class='movieReview'>");
+//                 let reviewLink = $("<a class='review'>" + moviesArray[i].headline + "</a>");
+//                 reviewLink.attr("href", moviesArray[i].url);
+//                 reviewLink.attr("target", "_blank");
+//                 reviewDiv.append(reviewLink);
+//                 let criticDiv = $("<div class='critic'>" + moviesArray[i].byline + "</div>");
+//                 reviewDiv.append(criticDiv);
+//             homeDiv.append(reviewDiv); 
+//         resultsDiv.append(homeDiv);
+//         resultsDiv.append($("<hr class='uk-divider-large'></hr>"));
+//     }
+//     $("#results-div2").removeClass("uk-hidden");
+// });
 
 
 // Function that accesses the NYTimes API given a string representing their place search, and builds an array of book objects with only the key values we care about
@@ -138,33 +159,33 @@ function getMovies() {
                 image_url: results[i].multimedia.src
             };
             moviesArray.push(newMovie);
-        }
+        };
         console.log("Movies:", moviesArray);
     
     });
 }
 
-// Function that accesses the Harvard Art Museums API given a string representing their place search, and builds an array of artwork objects with only the key values we care about
-function getArt() {
-	var queryURL = "https://api.harvardartmuseums.org/publication?q=publicationyear=2020&size=50&apikey=ad869fde-b267-4f1d-bf87-6a7b86478a0c";
-
-	$.ajax({
+// Function that accesses the eBay API given a string representing their place search, and builds an array of artwork objects with only the key values we care about
+function getHome() {
+	var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=homedecor&AvailableItemsOnly=true&MaxEntries=5";
+    
+    $.ajax({
 		url: queryURL,
 		method: "GET"
-	}).then(function(response) {
-        console.log(response);
-		let results = response.records;
-		// Iterate through the results array of objects representing art
-		for (let i = 0; i < results.length; i++) {
-		 let newArt = {
-            title: results[i].title,   
-            url: results[i].publicationplace, 
+    }).then(function(response) {
+            let results = response.Product;
+        // Iterate through the result and build a cleaner array of objects representing each movie on the list
+        for (let i = 0; i < results.length; i++) {
+            let newHome = {
+                title: results[i].Title,  
+                url: results[i].DetailsURL,
+            };
+            homeArray.push(newHome);
         };
-        artArray.push(newArt);
-    }
-    console.log("Art:", artArray);
-
+        console.log("Home Decor:", homeArray);
+    
     });
 }
+
 
 
