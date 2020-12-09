@@ -190,12 +190,13 @@ $(document).ready(function() {
 //                 imageDiv.append();
 //             cookingDiv.append(imageDiv);
             
-//             let textDiv = $("<div class='homeInfo'>");
-//                 let titleLink = $("<a class='text-bold'>" + cookingArray[i].Title + "</a>");
-//                     titleLink.attr("href", cookingArray[i].DetailsURL)
-//                     titleLink.attr("target", "_blank");
-//                 textDiv.append(titleLink);
-        
+            let textDiv = $("<div class='homeInfo'>");
+                let titleLink = $("<a class='text-bold'>" + cookingArray[i].Title + "</a>");
+                    titleLink.attr("href", cookingArray[i].DetailsURL)
+                    titleLink.attr("target", "_blank");
+                    // let saveButton = $(<button)
+                    // titleDiv.append(saveButton)
+                    textDiv.append(titleLink);        
 
 //         resultsDiv.append(cookingDiv);
 //         resultsDiv.append($("<hr class='uk-divider-large'>"));
