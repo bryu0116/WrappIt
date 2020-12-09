@@ -1,5 +1,7 @@
 $(document).ready(function() {
+
     
+
     let booksArray = [];
     getBooks();
     let moviesArray = [];
@@ -17,7 +19,7 @@ $(document).ready(function() {
     $(document).on("click", "input#books", showBooks);
     $(document).on("click", "input#movies", showMovies);
 
-    $(document).on("click", "button#saveBooks", saveBooks);
+    $(document).on("click", "button.saveGift", saveGift);
     // $(document).on("click", "button#saveMovies", saveMovies);
     // $(document).on("click", "button#saveArt", saveArt);
 
@@ -61,7 +63,7 @@ $(document).ready(function() {
                 bookDiv.append(imageDiv);
                 
                 let textDiv = $("<div class='bookInfo'>");
-                    let titleLink = $("<a class='text-bold'>" + booksArray[i].title + "</a>");
+                    let titleLink = $("<a class='text-bold title'>" + booksArray[i].title + "</a>");
                         titleLink.attr("href", booksArray[i].url)
                         titleLink.attr("target", "_blank");
                     textDiv.append(titleLink);
@@ -71,6 +73,10 @@ $(document).ready(function() {
                     
                     let descDiv = $("<div class='bookDesc'>" + booksArray[i].description + "</div>");
                     textDiv.append(descDiv);
+
+                    let saveBtn = $("<button type='submit' class='saveGift'>");
+                    saveBtn.text("Save to the Gift List");
+                    textDiv.append(saveBtn); 
                 bookDiv.append(textDiv);
 
             resultsDiv.append(bookDiv);
@@ -78,11 +84,18 @@ $(document).ready(function() {
         }
 
         $("#results-div1").removeClass("uk-hidden");
+    }
 
-        let saveBtn = $("<button id='saveBooks'>");
-        saveBtn.attr("type", "submit");
-        saveBtn.text("Save results");
-        resultsDiv.append(saveBtn);
+    function saveGift(e) {
+        e.preventDefault();
+        const gift = {
+            gift: $(this).siblings('.title').text(),
+            gift_desc: $(this).siblings('.bookDesc').text()
+            UserId:  
+        };
+        $.post("/api/wrappit", gift, function(){
+            $(this).text("Gift Saved!");
+        });
     }
 
     // Movies (reviews) - NYTimes API
@@ -360,15 +373,14 @@ function getGames() {
 // CRUD 
     
     // CREATE DB record - POST method 
-    function saveBooks(e) {
-        e.preventDefault();
-        $.ajax({
-            url: "/api/wrappit",
-            method: "POST"
-        }).then(function(response) {
-            console.log(response);
-        });
-    }
+    // function saveGift(e) {
+    //     e.preventDefault();
+    //     const gift = {
+    //         gift: ,
+    //         gift_desc: 
+    //     };
+    //     $.post("/api/wrappit", gift, cbFx)
+    // }
 
     // // READ DB - GET method
     // function getBooksDB() {

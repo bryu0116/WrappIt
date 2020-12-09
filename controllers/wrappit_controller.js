@@ -20,14 +20,15 @@ router.get("/", function(req, res) {
 //   }); 
 // // });
 
-// router.post("/api/wrappit", function(req, res) {
-//   console.log(req.body);
-//   db.Gift.create({
-//     gift: req.body.
-//   }).then(function(data) {
-//       res.json(data);
-//   }); 
-// });
+router.post("/api/wrappit", function(req, res) {
+  console.log(req.body);
+  db.Gift.create({
+    gift: req.body.gift,
+    gift_desc: req.body.gift_desc
+  }).then(function(dbGift) {
+      res.json(dbGift);
+  }); 
+});
 
 // router.put("/api/burger/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;
