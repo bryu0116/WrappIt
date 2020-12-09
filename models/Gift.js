@@ -12,18 +12,13 @@ module.exports = function(sequelize, DataTypes) {
             validate: {
                 len: [1, 255]
             }
-        },
-        giftee_id: {
-            type: DataTypes.INTEGER,
-            references: {
-              model: "Giftee",
-              key: 'id', 
-            }
         }
+    }, {
+        timestamps: false
     });
 
     Gift.associate = function(models) {
-        Gift.belongsTo(models.Giftee, {
+        Gift.belongsTo(models.User, {
           foreignKey: {
             allowNull: false
           }
