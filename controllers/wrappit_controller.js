@@ -18,16 +18,16 @@ router.get("/", function(req, res) {
 //     console.log(hbsObject);
 //     res.render("index", hbsObject);
 //   }); 
-// });
+// // });
 
-router.post("/api/wrappit", function(req, res) {
-  console.log(req.body);
-  db.Gift.create({
-    gift: req.body.
-  }).then(function(data) {
-      res.json(data);
-  }); 
-});
+// router.post("/api/wrappit", function(req, res) {
+//   console.log(req.body);
+//   db.Gift.create({
+//     gift: req.body.
+//   }).then(function(data) {
+//       res.json(data);
+//   }); 
+// });
 
 // router.put("/api/burger/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;

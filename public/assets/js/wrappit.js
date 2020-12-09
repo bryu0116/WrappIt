@@ -16,7 +16,6 @@ $(document).ready(function() {
 // Event listeners
     $(document).on("click", "input#books", showBooks);
     $(document).on("click", "input#movies", showMovies);
-    $(document).on("click", "input#art", showArt);
 
     $(document).on("click", "button#saveBooks", saveBooks);
     // $(document).on("click", "button#saveMovies", saveMovies);
@@ -148,61 +147,85 @@ $(document).ready(function() {
         });
     }   
 
-  // "Show Home Decor" button listener
-// Need to fix image
-$("#home").on("click", function () {
-    $("#results-header3").text("Home Decor");
-    const resultsDiv = $("#results-content3");
-    resultsDiv.empty();
-    for(let i = 0; i < homeArray.length; i++) {
-        let homeDiv = $("<div class='home'>");
-            let imageDiv = $("<div class='homeImg'>");
-                let homeImg = $("<img class='home-cover'>");
-                homeImg.attr("src", homeArray[i].StockPhotoURL);
-                homeImg.attr("alt", "Image of " + homeArray[i].Title);
-                imageDiv.append(homeImg);
-            homeDiv.append(imageDiv);
+//   // "Show Home Decor" button listener
+// // Need to fix image
+// $("#home").on("click", function () {
+//     $("#results-header3").text("Home Decor");
+//     const resultsDiv = $("#results-content3");
+//     resultsDiv.empty();
+//     for(let i = 0; i < homeArray.length; i++) {
+//         let homeDiv = $("<div class='home'>");
+//             let imageDiv = $("<div class='homeImg'>");
+//                 let homeImg = $("<img class='home-cover'>");
+//                 homeImg.attr("src", homeArray[i].StockPhotoURL);
+//                 homeImg.attr("alt", "Image of " + homeArray[i].Title);
+//                 imageDiv.append(homeImg);
+//             homeDiv.append(imageDiv);
             
-            let textDiv = $("<div class='homeInfo'>");
-                let titleLink = $("<a class='text-bold'>" + homeArray[i].Title + "</a>");
-                    titleLink.attr("href", homeArray[i].DetailsURL)
-                    titleLink.attr("target", "_blank");
-                textDiv.append(titleLink);
+//             let textDiv = $("<div class='homeInfo'>");
+//                 let titleLink = $("<a class='text-bold'>" + homeArray[i].Title + "</a>");
+//                     titleLink.attr("href", homeArray[i].DetailsURL)
+//                     titleLink.attr("target", "_blank");
+//                 textDiv.append(titleLink);
         
 
-        resultsDiv.append(homeDiv);
-        resultsDiv.append($("<hr class='uk-divider-large'>"));
-    }
-    $("#results-div3").removeClass("uk-hidden");
-});
+//         resultsDiv.append(homeDiv);
+//         resultsDiv.append($("<hr class='uk-divider-large'>"));
+//     }
+//     $("#results-div3").removeClass("uk-hidden");
+// });
 
-// "Show Cookbooks" button listener
-// Need to fix image
-$("#cooking").on("click", function () {
-    $("#results-header4").text("Cookbooks");
-    const resultsDiv = $("#results-content4");
-    resultsDiv.empty();
-    for(let i = 0; i < cookingArray.length; i++) {
-        let cookingDiv = $("<div class='home'>");
-            let imageDiv = $("<div class='homeImg'>");
-                let homeImg = $("<img class='home-cover'>");
-                homeImg.attr("src", cookingArray[i].StockPhotoURL);
-                homeImg.attr("alt", "Image of " + cookingArray[i].Title);
-                imageDiv.append();
-            cookingDiv.append(imageDiv);
+// // "Show Cookbooks" button listener
+// // Need to fix image
+// $("#cooking").on("click", function () {
+//     $("#results-header4").text("Cookbooks");
+//     const resultsDiv = $("#results-content4");
+//     resultsDiv.empty();
+//     for(let i = 0; i < cookingArray.length; i++) {
+//         let cookingDiv = $("<div class='home'>");
+//             let imageDiv = $("<div class='homeImg'>");
+//                 let homeImg = $("<img class='home-cover'>");
+//                 homeImg.attr("src", cookingArray[i].StockPhotoURL);
+//                 homeImg.attr("alt", "Image of " + cookingArray[i].Title);
+//                 imageDiv.append();
+//             cookingDiv.append(imageDiv);
             
-            let textDiv = $("<div class='homeInfo'>");
-                let titleLink = $("<a class='text-bold'>" + cookingArray[i].Title + "</a>");
-                    titleLink.attr("href", cookingArray[i].DetailsURL)
-                    titleLink.attr("target", "_blank");
-                textDiv.append(titleLink);
+//             let textDiv = $("<div class='homeInfo'>");
+//                 let titleLink = $("<a class='text-bold'>" + cookingArray[i].Title + "</a>");
+//                     titleLink.attr("href", cookingArray[i].DetailsURL)
+//                     titleLink.attr("target", "_blank");
+//                 textDiv.append(titleLink);
         
 
-        resultsDiv.append(cookingDiv);
-        resultsDiv.append($("<hr class='uk-divider-large'>"));
-    }
-    $("#results-div4").removeClass("uk-hidden");
-});
+//         resultsDiv.append(cookingDiv);
+//         resultsDiv.append($("<hr class='uk-divider-large'>"));
+//     }
+//     $("#results-div4").removeClass("uk-hidden");
+// });
+
+function getMakeup() {
+	var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=makeup&AvailableItemsOnly=true&MaxEntries=30"
+    
+    $.ajax({
+		url: queryURL,
+		method: "GET"
+    }).then(function(response) {
+        let jsonResponse = JSON.parse(response)
+        let results = jsonResponse.Product;
+
+        for (let i = 0; i < results.length; i++) {
+            let newMakeup = {
+                title: results[i].Title,  
+                url: results[i].DetailsURL,
+                image: results[i].StockPhotoURL
+            };
+            if (results[i].StockPhotoURL) {
+                makeupArray.push(newMakeup);
+            }
+        };
+        console.log("Makeup:", makeupArray);
+    });
+}
 
 //"Show Makeup" button listener
 // need to get image to load
@@ -210,21 +233,23 @@ $("#makeup").on("click", function () {
 	$("#results-header5").text("Makeup");
     const resultsDiv = $("#results-content5");
     resultsDiv.empty();
-    for(let i = 0; i < makeupArray.length; i++) {
+    for (let i = 0; i < makeupArray.length; i++) {
         let makeupDiv = $("<div class='makeup'>");
-        let imageDiv = $("<div class='makeupImg'>");
-            let makeupImg = $("<img class='makeup-cover'>");
-            makeupImg.attr("src", makeupArray[i].image);
-            makeupImg.attr("alt", "Image of " + makeupArray[i].title);
-            imageDiv.append();
-        makeupDiv.append(imageDiv);
+            let imageDiv = $("<div class='makeupImg'>");
+                let makeupImg = $("<img class='makeup-cover'>");
+                makeupImg.attr("src", makeupArray[i].image);
+                makeupImg.attr("alt", "Image of " + makeupArray[i].title);
+                imageDiv.append(makeupImg);
+            makeupDiv.append(imageDiv);
 
-		let titleDiv = $("<a class='text-bold'>" + makeupArray[i].title + "</a>");
-		titleDiv.attr("href", makeupArray[i].url)
-		titleDiv.attr("target", "_blank");
-		$("#results-content5").append(titleDiv);
+            let titleDiv = $("<div class='makeupInfo'>");
+                let titleLink = $("<a class='text-bold'>" + makeupArray[i].title + "</a>");
+                titleLink.attr("href", makeupArray[i].url);
+                titleLink.attr("target", "_blank");
+                titleDiv.append(titleLink);
+            makeupDiv.append(titleDiv);
 	
-		resultsDiv.append(titleDiv);
+	    resultsDiv.append(makeupDiv);
 		resultsDiv.append($("<hr class='uk-divider-large'>"));
 	}
 	$("#results-div5").removeClass("uk-hidden");
@@ -330,28 +355,7 @@ function getGames() {
     });
 }
 // Function that accesses the eBay API given a string representing their makeup search, and builds an array of objects with only the key values we care about
-function getMakeup() {
-	var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=makeup&AvailableItemsOnly=true&MaxEntries=10"
-    
-    $.ajax({
-		url: queryURL,
-		method: "GET"
-    }).then(function(response) {
-        let jsonResponse = JSON.parse(response)
-         let results = jsonResponse.Product;
-        // Iterate through the result and build a cleaner array of objects representing each makeup item on the list
-        for (let i = 0; i < results.length; i++) {
-            let newMakeup = {
-                title: results[i].Title,  
-                url: results[i].DetailsURL,
-                image: results[i].StockPhotoURL
-            };
-            makeupArray.push(newMakeup);
-        };
-        console.log("Makeup:", makeupArray);
-    
-    });
-}
+
 
 // CRUD 
     
