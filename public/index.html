@@ -30,19 +30,22 @@
     </nav>
 </div>
 
-
+<!-- Modal Container -->
 <div class="uk-cover-container">
     <canvas width="400 " height="600"></canvas>
+      <!-- Holiday background -->
       <img src="./assets/holiday-background.jpg" alt="holiday-background" uk-cover> 
       <div class="uk-position-center" id="title">
           <h1 class="uk-heading-line uk-text-center"><span>Welcome to WrappIt</span></h1>
           <div class="uk-card-header uk-text-center">
+            <!-- Modal Buttons -->
             <p uk-margin>
                 <a class="uk-button uk-button-default uk-button-danger" href="#modal-group-1" uk-toggle>Create WrappIt Account</a>
                 <a class="uk-button uk-button-default uk-hidden" href="#modal-group-2" uk-toggle>Modal 2</a>
                 <a class="uk-button uk-button-default uk-hidden" href="#modal-group-3" uk-toggle>Modal 3</a>
                 <a class="uk-button uk-button-default uk-hidden" href="#modal-group-4" uk-toggle>Modal 4</a>
             </p>
+            <!-- Create Account Modal -->
             <div id="modal-group-1" uk-modal>
                 <div class="uk-modal-dialog">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -69,7 +72,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Save Gifts Info Modal -->
             <div id="modal-group-2" uk-modal>
                 <div class="uk-modal-dialog">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -85,7 +88,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Interests Selection Modal -->
             <div id="modal-group-3" uk-modal>
                 <div class="uk-modal-dialog">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -116,10 +119,11 @@
                 </div>
             </div>
 
+            <!-- Start of Second Button -->
+            <!-- View Saved Gift Modal -->
             <p uk-margin>
                 <a class="uk-button uk-button-default uk-button-danger" href="#modal-group-5" uk-toggle>View Saved Gifts</a>
             </p>
-
             <div id="modal-group-5" uk-modal>
                 <div class="uk-modal-dialog">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
@@ -150,82 +154,44 @@
       </div>
   </div>
 
-
-
-
-
-
-
-<!-- Interests Container -->
-<!-- <div class="uk-cover-container">
-  <canvas width="400 " height="600"></canvas>
-    <img src="./assets/holiday-background.jpg" alt="holiday-background" uk-cover> 
-    <div class="uk-position-center" id="title">
-        <h1 class="uk-heading-line uk-text-center"><span>Welcome to WrappIt</span></h1>
-        <div class="uk-card-header uk-text-center">
-            <div id="category-list">
-                <div class="uk-card uk-card-default uk-card-body">
-                    <div class="uk-card-header">
-                        <h2 class="uk-card-title">Select the Giftee's Top 3 Interests</h2>
-                    </div>
-                    <br>
-                    <form class="uk-form-stacked">
-                        <div class="uk-margin">
-                            <div class="uk-form-controls" id="check">
-                                <label><input class="uk-checkbox" type="checkbox" name="checkbox1" id="books"> Books</label><br>
-                                <label><input class="uk-checkbox" type="checkbox" name="checkbox2" id="movies"> Movies</label><br>
-                                <label><input class="uk-checkbox" type="checkbox" name="checkbox3" id="home"> Home Decor</label><br>
-                                <label><input class="uk-checkbox" type="checkbox" name="checkbox4" id="cooking"> Cooking</label><br>
-                                <label><input class="uk-checkbox" type="checkbox" name="checkbox5" id="makeup"> Makeup</label><br>
-                                <label><input class="uk-checkbox" type="checkbox" name="checkbox6" id="games"> Video Games & Consoles</label><br>   
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <br>      
-            </div>
-        </div>
-    </div>
-</div> -->
-
 <!-- Result Cards -->
 <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
-    
+    <!-- Books Card -->
     <div id="results-div1" class="results-div uk-hidden">
         <div class="uk-card uk-card-default uk-card-body">
             <h2><span id="results-header1" class="card-title center-align"><!-- script will add a header here --></span></h2> 
             <div id="results-content1"><!-- script will append results here --></div>
         </div>
     </div>
-    
+    <!-- Movies Card -->
     <div id="results-div2" class="results-div uk-hidden">
         <div class="uk-card uk-card-default uk-card-body">
             <h2><span id="results-header2" class="card-title center-align"><!-- script will add a header here --></span></h2> 
             <div id="results-content2"><!-- script will append results here --></div>
         </div>
     </div>
-    
+    <!-- Home Decor Card -->
     <div id="results-div3" class="results-div uk-hidden">
         <div class="uk-card uk-card-default uk-card-body">
             <h2><span id="results-header3" class="card-title center-align"><!-- script will add a header here --></span></h2> 
             <div id="results-content3"><!-- script will append results here --></div>
         </div>
     </div>
-    
+    <!-- Cooking Card -->
     <div id="results-div4" class="results-div uk-hidden">
         <div class="uk-card uk-card-default uk-card-body">
             <h2><span id="results-header4" class="card-title center-align"><!-- script will add a header here --></span></h2> 
             <div id="results-content4"><!-- script will append results here --></div>
         </div>
     </div>
-    
+    <!-- Makeup Card -->
     <div id="results-div5" class="results-div uk-hidden">
         <div class="uk-card uk-card-default uk-card-body">
             <h2><span id="results-header5" class="card-title center-align"><!-- script will add a header here --></span></h2> 
             <div id="results-content5"><!-- script will append results here --></div>
         </div>
     </div>
-    
+    <!-- Video Games & Consoles Card -->
     <div id="results-div6" class="results-div uk-hidden">
         <div class="uk-card uk-card-default uk-card-body">
             <h2><span id="results-header6" class="card-title center-align"><!-- script will add a header here --></span></h2> 
