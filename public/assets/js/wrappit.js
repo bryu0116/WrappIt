@@ -13,7 +13,7 @@ $(document).ready(function() {
     let makeupArray = [];
     getMakeup();
     
-// Event listeners
+    // Event listeners
     $(document).on("click", "input#books", showBooks);
     $(document).on("click", "input#movies", showMovies);
 
@@ -151,7 +151,7 @@ $(document).ready(function() {
     
     // Function that accesses the eBay API given a string representing home decor, and builds an array of objects with only the key values we care about
     function getHome() {
-        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=homedecor&AvailableItemsOnly=true&MaxEntries=10";
+        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=homedecor&AvailableItemsOnly=true&MaxEntries=50";
         
         $.ajax({
             url: queryURL,
@@ -237,7 +237,7 @@ $(document).ready(function() {
             let cookingImg = $("<img class='cookbook-cover'>");
             cookingImg.attr("src", cookingArray[i].image);
             cookingImg.attr("alt", "Image of " + cookingArray[i].title);
-            imageDiv.append(homeImg);
+            imageDiv.append(cookingImg);
             cookingDiv.append(imageDiv);
 
             let titleDiv = $("<div class='cookbookInfo'>");
