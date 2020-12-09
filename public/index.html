@@ -30,8 +30,134 @@
     </nav>
 </div>
 
-<!-- Interests Container -->
+
 <div class="uk-cover-container">
+    <canvas width="400 " height="600"></canvas>
+      <img src="./assets/holiday-background.jpg" alt="holiday-background" uk-cover> 
+      <div class="uk-position-center" id="title">
+          <h1 class="uk-heading-line uk-text-center"><span>Welcome to WrappIt</span></h1>
+          <div class="uk-card-header uk-text-center">
+            <p uk-margin>
+                <a class="uk-button uk-button-default" href="#modal-group-1" uk-toggle>Create WrappIt Account</a>
+                <a class="uk-button uk-button-default uk-hidden" href="#modal-group-2" uk-toggle>Modal 2</a>
+                <a class="uk-button uk-button-default uk-hidden" href="#modal-group-3" uk-toggle>Modal 3</a>
+                <a class="uk-button uk-button-default uk-hidden" href="#modal-group-4" uk-toggle>Modal 4</a>
+            </p>
+            <div id="modal-group-1" uk-modal>
+                <div class="uk-modal-dialog">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title">Create WrappIt Account</h2>
+                    </div>
+                    <form class="uk-form-horizontal uk-margin-medium">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-horizontal-text">Create Username</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="form-horizontal-text" type="text" id="username" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-horizontal-text" id="password">Enter Email Address</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Email Address">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="uk-modal-footer uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <a href="#modal-group-2" class="uk-button uk-button-danger" uk-toggle>Next</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-group-2" uk-modal>
+                <div class="uk-modal-dialog">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title">Save Gifts Option</h2>
+                    </div>
+                    <div class="uk-modal-body">
+                        <p>It's time to WrappIt up!</p>
+                        <p>Next, please select the giftees top 3 interests. Once selected, you have the option to save the desired gift by clicking 'save' next to each item.</p>
+                    </div>
+                    <div class="uk-modal-footer uk-text-right">
+                        <a href="#modal-group-3" class="uk-button uk-button-danger" uk-toggle>Next</a>
+                    </div>
+                </div>
+            </div>
+
+            <div id="modal-group-3" uk-modal>
+                <div class="uk-modal-dialog">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div id="category-list">
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <div class="uk-card-header">
+                                <h2 class="uk-card-title">Select the Giftee's Top 3 Interests</h2>
+                            </div>
+                            <br>
+                            <form class="uk-form-stacked">
+                                <div class="uk-margin">
+                                    <div class="uk-form-controls" id="check">
+                                        <label><input class="uk-checkbox" type="checkbox" name="checkbox1" id="books"> Books</label><br>
+                                        <label><input class="uk-checkbox" type="checkbox" name="checkbox2" id="movies"> Movies</label><br>
+                                        <label><input class="uk-checkbox" type="checkbox" name="checkbox3" id="home"> Home Decor</label><br>
+                                        <label><input class="uk-checkbox" type="checkbox" name="checkbox4" id="cooking"> Cooking</label><br>
+                                        <label><input class="uk-checkbox" type="checkbox" name="checkbox5" id="makeup"> Makeup</label><br>
+                                        <label><input class="uk-checkbox" type="checkbox" name="checkbox6" id="games"> Video Games & Consoles</label><br>   
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <br>      
+                    </div>
+                    <div class="uk-modal-footer uk-text-right">
+                        <button class="uk-button uk-button-default uk-button-danger uk-modal-close" type="button">View Results</button>
+                    </div>
+                </div>
+            </div>
+
+            <p uk-margin>
+                <a class="uk-button uk-button-default" href="#modal-group-5" uk-toggle>View Saved Gifts</a>
+            </p>
+
+            <div id="modal-group-5" uk-modal>
+                <div class="uk-modal-dialog">
+                    <button class="uk-modal-close-default" type="button" uk-close></button>
+                    <div class="uk-modal-header">
+                        <h2 class="uk-modal-title">Sign In to WrappIt Account</h2>
+                    </div>
+                    <form class="uk-form-horizontal uk-margin-medium">
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-horizontal-text">Username</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Username">
+                            </div>
+                        </div>
+                        <div class="uk-margin">
+                            <label class="uk-form-label" for="form-horizontal-text" id="password">Email Address</label>
+                            <div class="uk-form-controls">
+                                <input class="uk-input" id="form-horizontal-text" type="text" placeholder="Password">
+                            </div>
+                        </div>
+                    </form>
+                    <div class="uk-modal-footer uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
+                        <a href="./public/views/results.handlebars" class="uk-button uk-button-danger" uk-toggle>Next</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+
+
+<!-- Interests Container -->
+<!-- <div class="uk-cover-container">
   <canvas width="400 " height="600"></canvas>
     <img src="./assets/holiday-background.jpg" alt="holiday-background" uk-cover> 
     <div class="uk-position-center" id="title">
@@ -60,7 +186,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 <!-- Result Cards -->
 <div class="uk-grid-match uk-child-width-expand@s uk-text-center" uk-grid>
