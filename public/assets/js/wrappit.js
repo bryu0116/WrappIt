@@ -44,7 +44,6 @@ $("#books").on("click", function () {
     $("#results-div1").removeClass("uk-hidden");
 });
 
-
 // "Show Movies" button listener
 $("#movies").on("click", function () {
     $("#results-header2").text("NYT Movie Reviews");
@@ -129,7 +128,9 @@ $("#cooking").on("click", function () {
                 let titleLink = $("<a class='text-bold'>" + cookingArray[i].Title + "</a>");
                     titleLink.attr("href", cookingArray[i].DetailsURL)
                     titleLink.attr("target", "_blank");
-                textDiv.append(titleLink);
+                    // let saveButton = $(<button)
+                    // titleDiv.append(saveButton)
+                    textDiv.append(titleLink);
         
 
         resultsDiv.append(cookingDiv);
