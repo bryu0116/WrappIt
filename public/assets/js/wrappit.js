@@ -12,7 +12,8 @@ $(document).ready(function() {
     getGames();
     let makeupArray = [];
     getMakeup();
-    
+ 
+          
     // Event listeners
     $(document).on("click", "input#books", showBooks);
     $(document).on("click", "input#movies", showMovies);
