@@ -10,21 +10,28 @@ router.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../index.html"));
 });
 
-// router.get("/api/wrappit", function(req, res) {
-//   wrappit.selectAll(function(data) {
-//     const hbsObject = {
-//       wrappit: data
-//     };
-//     console.log(hbsObject);
-//     res.render("index", hbsObject);
-//   }); 
-// // });
+router.get("/api/users", function(req, res) {
+  db.User.findAll({}).then(function(users) {
+    res.json(users);
+  });
+});
 
-router.post("/api/wrappit", function(req, res) {
+router.post("/api/user", function (req, res) {
+  console.log(req.body);
+  db.User.create({
+    username: req.body.username,
+    email: req.body.email
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
+});
+
+router.post("/api/gift", function(req, res) {
   console.log(req.body);
   db.Gift.create({
     gift: req.body.gift,
-    gift_desc: req.body.gift_desc
+    gift_desc: req.body.gift_desc,
+    UserId: req.body.UserId
   }).then(function(dbGift) {
       res.json(dbGift);
   }); 

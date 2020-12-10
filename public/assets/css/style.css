@@ -25,6 +25,12 @@ h2 {
     font-family: 'Handlee', cursive;
 }
 
+#results-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
 .results-div {
   text-align: left;
 }
