@@ -22,6 +22,7 @@ $(document).ready(function() {
     let searchMakeup = false;
     let searchGames = false;
 
+
 // Event listeners
     // "Next" button listener (new user account modal)
     $(document).on("click", "#login", saveUser);
