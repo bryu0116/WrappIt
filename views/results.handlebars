@@ -1,23 +1,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            
-            <ul>
+            <h2>Saved gifts for {{username}}:</h2>
             {{#each gifts}}
-                <li>
-                <p><span class="label">ID:</span> {{this.id}}</p>
-                <p><span class="label">Description:</span> {{this.gift_desc}}</p>
-                <p><span class="label">Gift:</span> {{this.gift}}</p>
-                <p><span class="label">URL:</span> {{this.gift_url}}</p>
+                <div class='gift'> 
+                    <div class='gift-image'>
+                        <img src="{{image_url}}" alt="Image of {{gift}}">                         
+                    </div>
+                    <div class='gift-info'>
+                        <a class='text-bold' href='{{gift_url}}' target='_blank'>{{gift}}</a>
+                        <p>{{gift_desc}}</p>                
+                    </div>
+                </div>
 
-                <button data-id="{{this.id}}" class="delquote">Delete</button>
-
-                <a href="/{{this.id}}">Add to List</a>
-                </li>
+                <button data-id="{{id}}" class="delquote">Delete</button>
             {{/each}}
-            </ul>
-                    
-
+        
         </div>
     </div>
 </div>

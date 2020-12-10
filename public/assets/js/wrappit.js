@@ -38,7 +38,8 @@ $(document).ready(function() {
     $(document).on("click", "button#results", showResults);
     // "Save Gift" button listener
     $(document).on("click", "button.saveGift", saveGift);
-
+    // "Next" button listener (view saved gifts modal)
+    $(document).on("click", "#saved", getSavedGifts);
 
 // Gift functions
 
@@ -461,11 +462,29 @@ $(document).ready(function() {
     }
 
     // Get all gifts for a specific user
-    function getUserGifts() {
+    function getSavedGifts(username) {
         $.get("/api/gifts", function(gifts) {
             console.log(gifts);
-        })
+            if (!gifts || !gifts.length) {
+                displayEmpty(username);
+            } else {
+                location.redirect("/api/saved");
+            }
+        });
     }
+
+    function displayEmpty(username) {
+        const pageContainer = $(".container");
+        const partial = "";
+        if (username) {
+          partial = " for " + username;
+        }
+        pageContainer.empty();
+        const messageH2 = $("<h2>");
+        messageH2.css({ "text-align": "center", "margin-top": "50px" });
+        messageH2.html("No saved gifts yet" + partial + ", please go to <a href='/#modal-group-2'>search page</a> to get started.");
+        pageContainer.append(messageH2);
+      }
 
 // UPDATE DB - PUT method
 

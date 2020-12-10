@@ -16,6 +16,19 @@ router.get("/api/users", function(req, res) {
   });
 });
 
+router.get("/api/gifts", function(req, res) {
+  const query = {};
+  if (req.query.UserId) {
+    query.UserId = req.query.UserId;
+  }
+  db.Gift.findAll({
+    where: query,
+    include: [db.User]
+  }).then(function(gifts) {
+    res.json(gifts);
+  });
+});
+
 router.post("/api/user", function (req, res) {
   console.log(req.body);
   db.User.create({
