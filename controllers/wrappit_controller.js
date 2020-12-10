@@ -3,22 +3,19 @@ const path = require("path");
 const router = express.Router();
 
 // Import the model (wrappit.js) to use its database functions.
-const db = require("../models/index.js");
+const db = require("../models");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../index.html"));
 });
 
-// router.get("/api/wrappit", function(req, res) {
-//   wrappit.selectAll(function(data) {
-//     const hbsObject = {
-//       wrappit: data
-//     };
-//     console.log(hbsObject);
-//     res.render("index", hbsObject);
-//   }); 
-// // });
+router.get("/gifts", function(req, res) {
+  db.Gift.findAll({}).then(function(dbGifts) {
+    // We have access to the gifts as an argument inside of the callback function
+    res.render("results",{gifts: dbGifts});
+  });
+});
 
 // router.post("/api/wrappit", function(req, res) {
 //   console.log(req.body);
