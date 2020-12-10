@@ -63,6 +63,10 @@ h2 {
   margin-bottom: 10px;
 }
 
+.makeup-cover {
+  width: 150px;
+}
+
 .bookInfo, .movieInfo {
   display: flex;
   flex-direction: column;
@@ -75,7 +79,7 @@ h2 {
 }
 
 .bookDesc, .movieDesc {
-  width: 250px;
+  width: 200px;
   text-align: left;
   padding: 15px 0px;
 }

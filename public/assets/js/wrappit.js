@@ -13,10 +13,8 @@ $(document).ready(function() {
     let gamesArray = [];
     getGames();
 
-    let saveBtn = $("<button type='submit' class='saveGift'>");
-    saveBtn.text("Save to the Gift List");
-
-    let userInfo, allUsers, UserId;
+    let userInfo, UserId;
+    let allUsers = [];
     let searchBooks = false;
     let searchMovies = false;
     let searchHome = false;
@@ -229,6 +227,8 @@ $(document).ready(function() {
                     textDiv.append(authorDiv);
                     let descDiv = $("<div class='bookDesc'>" + booksArray[i].description + "</div>");
                     textDiv.append(descDiv);
+                    let saveBtn = $("<button type='submit' class='saveGift'>");
+                    saveBtn.text("Save to the Gift List");
                     textDiv.append(saveBtn); 
                 bookDiv.append(textDiv);
             resultsDiv.append(bookDiv);
@@ -252,24 +252,26 @@ $(document).ready(function() {
                         movieImg.attr("alt", "Image of '" + moviesArray[i].title + "'");
                         imageDiv.append(movieImg);
                     movieDesc.append(imageDiv);
-
-                    let textDiv = $("<div class='movieInfo'>");
-                        let title = $("<div class='text-bold'>" + moviesArray[i].title + "</div>");
-                        textDiv.append(title);
-                        let descDiv = $("<div class='movieDesc'>" + moviesArray[i].description + "</div>");
-                        textDiv.append(descDiv);
-                        textDiv.append(saveBtn); 
-                    movieDesc.append(textDiv);
+                    
+                    let reviewDiv = $("<div class='movieReview'>");
+                        let reviewLink = $("<a class='review'>" + moviesArray[i].headline + "</a>");
+                        reviewLink.attr("href", moviesArray[i].url);
+                        reviewLink.attr("target", "_blank");
+                        reviewDiv.append(reviewLink);
+                        let criticDiv = $("<div class='critic'>" + moviesArray[i].byline + "</div>");
+                        reviewDiv.append(criticDiv); 
+                    movieDesc.append(reviewDiv);
                 movieDiv.append(movieDesc);
 
-                let reviewDiv = $("<div class='movieReview'>");
-                    let reviewLink = $("<a class='review'>" + moviesArray[i].headline + "</a>");
-                    reviewLink.attr("href", moviesArray[i].url);
-                    reviewLink.attr("target", "_blank");
-                    reviewDiv.append(reviewLink);
-                    let criticDiv = $("<div class='critic'>" + moviesArray[i].byline + "</div>");
-                    reviewDiv.append(criticDiv);
-                movieDiv.append(reviewDiv);
+                let textDiv = $("<div class='movieInfo'>");
+                    let title = $("<div class='text-bold'>" + moviesArray[i].title + "</div>");
+                    textDiv.append(title);
+                    let descDiv = $("<div class='movieDesc'>" + moviesArray[i].description + "</div>");
+                    textDiv.append(descDiv);
+                    let saveBtn = $("<button type='submit' class='saveGift'>");
+                    saveBtn.text("Save to the Gift List");
+                    textDiv.append(saveBtn);
+                movieDiv.append(textDiv);
             resultsDiv.append(movieDiv);
             resultsDiv.append($("<hr class='uk-divider-large'></hr>"));
         }
@@ -295,6 +297,8 @@ $(document).ready(function() {
                     titleLink.attr("href", homeArray[i].url);
                     titleLink.attr("target", "_blank");
                     titleDiv.append(titleLink);
+                    let saveBtn = $("<button type='submit' class='saveGift'>");
+                    saveBtn.text("Save to the Gift List");
                     titleDiv.append(saveBtn); 
                 homeDiv.append(titleDiv);
             resultsDiv.append(homeDiv);
@@ -322,6 +326,8 @@ $(document).ready(function() {
                     titleLink.attr("href", cookingArray[i].url);
                     titleLink.attr("target", "_blank");
                     titleDiv.append(titleLink);
+                    let saveBtn = $("<button type='submit' class='saveGift'>");
+                    saveBtn.text("Save to the Gift List");
                     titleDiv.append(saveBtn); 
                 cookingDiv.append(titleDiv);
             resultsDiv.append(cookingDiv);
@@ -349,6 +355,8 @@ $(document).ready(function() {
                     titleLink.attr("href", makeupArray[i].url);
                     titleLink.attr("target", "_blank");
                     titleDiv.append(titleLink);
+                    let saveBtn = $("<button type='submit' class='saveGift'>");
+                    saveBtn.text("Save to the Gift List");
                     titleDiv.append(saveBtn); 
                 makeupDiv.append(titleDiv);
             resultsDiv.append(makeupDiv);
@@ -376,6 +384,8 @@ $(document).ready(function() {
                     titleLink.attr("href", gamesArray[i].url);
                     titleLink.attr("target", "_blank");
                     titleDiv.append(titleLink);
+                    let saveBtn = $("<button type='submit' class='saveGift'>");
+                    saveBtn.text("Save to the Gift List");
                     titleDiv.append(saveBtn); 
                 gamesDiv.append(titleDiv);
             resultsDiv.append(gamesDiv);
@@ -398,37 +408,39 @@ $(document).ready(function() {
         };
         
         $.get("/api/users", function(users){
-            if(users.length > 0) {
-
-                allUsers = users;
-
-                for (let i = 0; i < allUsers.length; i++) {
-                    if (allUsers[i].username === userInfo.username || 
-                        allUsers[i].email === userInfo.email) {
-                            console.log(
-                                `You already have an account. \n 
-                                Your account login is: \n ?
-                                Username: ${allUsers[i].username} \n 
-                                Email: ${allUsers[i].email}`
-                            );
-                            break;
-                    } else if (i = allUsers.length-1) {
-                        $.post("/api/user", userInfo, function(newUser){
-                            console.log(newUser);
-                            UserId = newUser.id; 
-                        });                                
-                    } else {
-                        continue;
-                    }
-                }
-
+            if (users.length > 0) {
+                allUsers = users; 
             } else {
-                $.post("/api/user", userInfo, function(newUser){
-                    console.log(newUser);
-                    UserId = newUser.id; 
-                });
+                allUsers = [];
             }
-        });                    
+        });
+
+        if (allUsers.length > 0) {      
+            for (let i = 0; i < allUsers.length; i++) {
+                if (allUsers[i].username === userInfo.username || 
+                    allUsers[i].email === userInfo.email) {
+                        console.log(
+                            `You already have an account. \n 
+                            Your account login is: \n ?
+                            Username: ${allUsers[i].username} \n 
+                            Email: ${allUsers[i].email}`
+                        );
+                        break;
+                } else if (i = allUsers.length-1) {
+                    $.post("/api/user", userInfo, function(newUser){
+                        console.log(newUser);
+                        UserId = newUser.id; 
+                    });                                
+                } else {
+                    continue;
+                }
+            }
+        } else {
+            $.post("/api/user", userInfo, function(newUser){
+                console.log(newUser);
+                UserId = newUser.id; 
+            });
+        }            
     }
 
     // Create a new gift record (a row in "gifts" table)
