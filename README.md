@@ -2,14 +2,20 @@
 ## Overview
 Ahh, the holidays, the time of year when you can't figure out what to buy your loved ones. With our app, WrappIt, we make it easy to find that perfect gift. Just select that special person's top 3 interests from our categories of gifts and we'll wrap up a list of gifts specific to those interests. No need to fret, just WrappIt and gift it!
 ## Description
-The WrappIt App is for users who are having trouble finding that perfect gift.
+The WrappIt App is for users who are having trouble finding that perfect gift. Open source css framewok UIkit, New York Times API for books and movies, and eBay API for home decor, cooking, makeup, and video games & consoles were used to the WrappIt App.
 
 ## Wrappit Application Screen Shot
-Main Page
+### Main Page
 <img src="public/assets/WrappIt 01.png" alt="WrappIt App Main Page">
 
-Creating Account
+### Creating Account
 <img src="public/assets/WrappIt 02.png" alt="WrappIt App Creating Account">
+
+### Selecting giftee's top 3 interests
+<img src="public/assets/WrappIt 03.png" alt="WrappIt App Selecting Interests">
+
+### Results
+<img src="public/assets/WrappIt 04.png" alt="WrappIt App Creating Account">
 
 
 ## Built With
