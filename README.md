@@ -6,13 +6,13 @@ The WrappIt App is for users who are having trouble finding that perfect gift. O
 
 ## Wrappit Application Screen Shot
 ### Main Page
-<img src="public/assets/WrappIt 01.png" alt="WrappIt App Main Page">
+<img src="public/assets/WrappIt01.png" alt="WrappIt App Main Page">
 
 ### Creating Account
-<img src="public/assets/WrappIt 02.png" alt="WrappIt App Creating Account">
+<img src="public/assets/WrappIt02.png" alt="WrappIt App Creating Account">
 
 ### Selecting giftee's top 3 interests
-<img src="public/assets/WrappIt 03.png" alt="WrappIt App Selecting Interests">
+<img src="public/assets/WrappIt03.png" alt="WrappIt App Selecting Interests">
 
 ### Results
 <img src="public/assets/WrappIt 04.png" alt="WrappIt App Creating Account">
