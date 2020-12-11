@@ -3,28 +3,52 @@ const path = require("path");
 const router = express.Router();
 
 // Import the model (wrappit.js) to use its database functions.
-const db = require("../models");
+const db = require("../models/index.js");
 
 // Create all our routes and set up logic within those routes where required.
 router.get("/", function(req, res) {
   res.sendFile(path.join(__dirname, "../index.html"));
 });
 
-router.get("/gifts", function(req, res) {
-  db.Gift.findAll({}).then(function(dbGifts) {
-    // We have access to the gifts as an argument inside of the callback function
-    res.render("results",{gifts: dbGifts});
+router.get("/api/users", function(req, res) {
+  db.User.findAll({}).then(function(users) {
+    res.json(users);
   });
 });
 
-// router.post("/api/wrappit", function(req, res) {
-//   console.log(req.body);
-//   db.Gift.create({
-//     gift: req.body.
-//   }).then(function(data) {
-//       res.json(data);
-//   }); 
-// });
+router.get("/api/gifts", function(req, res) {
+  const query = {};
+  if (req.query.UserId) {
+    query.UserId = req.query.UserId;
+  }
+  db.Gift.findAll({
+    where: query,
+    include: [db.User]
+  }).then(function(gifts) {
+    res.json(gifts);
+  });
+});
+
+router.post("/api/user", function (req, res) {
+  console.log(req.body);
+  db.User.create({
+    username: req.body.username,
+    email: req.body.email
+  }).then(function(dbUser) {
+    res.json(dbUser);
+  });
+});
+
+router.post("/api/gift", function(req, res) {
+  console.log(req.body);
+  db.Gift.create({
+    gift: req.body.gift,
+    gift_desc: req.body.gift_desc,
+    UserId: req.body.UserId
+  }).then(function(dbGift) {
+      res.json(dbGift);
+  }); 
+});
 
 // router.put("/api/burger/:id", function(req, res) {
 //   var condition = "id = " + req.params.id;

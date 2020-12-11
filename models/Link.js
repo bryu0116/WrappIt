@@ -1,5 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
-  const Link = sequelize.define("Link", {
+
+const Link = sequelize.define("Link", {
       gift_url: {
           type: DataTypes.STRING,
           allowNull: false,
