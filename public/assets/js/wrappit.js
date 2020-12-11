@@ -70,7 +70,7 @@ $(document).ready(function() {
 
      // Movies (reviews) - NYTimes API
      function getMovies() {
-        var queryURL = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?critics-pick=Y& opening-date=2019-01-01;2020-09-01&api-key=xUVU76OUVbXKD94Ig4mUUmlvQJGAyTSQ";
+        var queryURL = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?critics-pick=Y&opening-date=2019-01-01;2020-09-01&api-key=xUVU76OUVbXKD94Ig4mUUmlvQJGAyTSQ";
 
         $.ajax({
             url: queryURL,
