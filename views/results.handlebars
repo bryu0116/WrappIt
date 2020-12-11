@@ -1,3 +1,21 @@
-{{#each gifts}}
-{{gift}}
-{{/each}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Saved gifts for {{username}}:</h2>
+            {{#each gifts}}
+                <div class='gift'> 
+                    <div class='gift-image'>
+                        <img src="{{image_url}}" alt="Image of {{gift}}">                         
+                    </div>
+                    <div class='gift-info'>
+                        <a class='text-bold' href='{{gift_url}}' target='_blank'>{{gift}}</a>
+                        <p>{{gift_desc}}</p>                
+                    </div>
+                </div>
+
+                <button data-id="{{id}}" class="delquote">Delete</button>
+            {{/each}}
+        
+        </div>
+    </div>
+</div>
