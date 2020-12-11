@@ -22,6 +22,7 @@ $(document).ready(function() {
     let searchMakeup = false;
     let searchGames = false;
 
+
 // Event listeners
     // "Next" button listener (new user account modal)
     $(document).on("click", "#login", saveUser);
@@ -69,7 +70,7 @@ $(document).ready(function() {
 
      // Movies (reviews) - NYTimes API
      function getMovies() {
-        var queryURL = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?critics-pick=Y& opening-date=2019-01-01;2020-09-01&api-key=xUVU76OUVbXKD94Ig4mUUmlvQJGAyTSQ";
+        var queryURL = "https://api.nytimes.com/svc/movies/v2/reviews/search.json?critics-pick=Y&opening-date=2019-01-01;2020-09-01&api-key=xUVU76OUVbXKD94Ig4mUUmlvQJGAyTSQ";
 
         $.ajax({
             url: queryURL,
@@ -93,7 +94,7 @@ $(document).ready(function() {
 
     // Home Decor - eBay API
     function getHome() {
-        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=homedecor&AvailableItemsOnly=true&MaxEntries=50";
+        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=homedecor&AvailableItemsOnly=true&MaxEntries=400";
         
         $.ajax({
             url: queryURL,
@@ -118,7 +119,7 @@ $(document).ready(function() {
 
     // Cooking books - eBay API
     function getCooking() {
-        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=cookbooks&AvailableItemsOnly=true&MaxEntries=10"
+        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=cookbooks&AvailableItemsOnly=true&MaxEntries=100"
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -142,7 +143,7 @@ $(document).ready(function() {
 
     // Makeup - eBay API
     function getMakeup() {
-        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=makeup&AvailableItemsOnly=true&MaxEntries=30"
+        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=makeup&AvailableItemsOnly=true&MaxEntries=100"
 
         $.ajax({
             url: queryURL,
@@ -167,7 +168,7 @@ $(document).ready(function() {
     
     // Video games and consoles - eBay API
     function getGames() {
-        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=games&AvailableItemsOnly=true&MaxEntries=20"
+        var queryURL = "https://cors-anywhere.herokuapp.com/" + "https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=games&AvailableItemsOnly=true&MaxEntries=95"
 
         $.ajax({
             url: queryURL,
