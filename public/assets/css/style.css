@@ -83,3 +83,19 @@ h2 {
   text-align: left;
   padding: 15px 0px;
 }
+
+.home-cover {
+  width: 150px;
+}
+
+.makeup-cover {
+  width: 150px;
+}
+
+.cookbook-cover {
+  width: 150px;
+}
+
+.games-cover {
+  width: 150px;
+}
