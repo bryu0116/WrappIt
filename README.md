@@ -57,7 +57,7 @@ Once 'App listening on PORT: 8080' displays in your terminal, open your browser 
 To view the WrappIt application, click here:
 https://intense-falls-86763.herokuapp.com/
 
-## Licence
+## License
 ![License](https://img.shields.io/badge/License-mit-blue.svg "License Badge")
 
 [MIT License](http://opensource.org/licenses/mit-license.php)
