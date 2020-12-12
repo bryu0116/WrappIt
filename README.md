@@ -68,9 +68,9 @@ https://intense-falls-86763.herokuapp.com/
 * **Brandon Ryu** - Server / Controllers / config
 
 ## Github Info
-[Suzanne Givnish](https://github.com/suzygiv)
-[Bohdan Pechenyak](https://github.com/BohdiCave)
-[Brandon Ryu](https://github.com/bryu0116e)
+[Suzanne Givnish](https://github.com/suzygiv),
+[Bohdan Pechenyak](https://github.com/BohdiCave),
+[Brandon Ryu](https://github.com/bryu0116)
 
 
 
