@@ -17,6 +17,30 @@ body {
     font-size: 50px;
 }
 
+.uk-navbar-container {
+  box-shadow: 2px 2px 16px 2px lightgray;
+  background-color: whitesmoke;
+}
+
+.uk-logo {
+  margin-top: 5px;
+  text-shadow: 2px 2px 8px lightgray;
+}
+
+.fa-carrot {
+  margin-top: -15px;
+}
+
+button#about {
+  margin-right: 15px;
+  box-shadow: 2px 2px 8px 4px lightgray;
+  text-shadow: 1px 1px 36px darkslategray;
+}
+
+.uk-button {
+  border-radius: 5px;
+}
+
 h1 {
   font-family: 'Handlee', cursive;
 }
@@ -53,7 +77,11 @@ h2 {
   justify-content: flex-start;
 }
 
-.book-cover {
+.book-cover,
+.home-cover,
+.makeup-cover, 
+.cookbook-cover,
+.games-cover {
   width: 150px;
 }
 
@@ -61,10 +89,6 @@ h2 {
   width: 250px;
   margin-right: 20px;
   margin-bottom: 10px;
-}
-
-.makeup-cover {
-  width: 150px;
 }
 
 .bookInfo, .movieInfo {
@@ -84,18 +108,66 @@ h2 {
   padding: 15px 0px;
 }
 
-.home-cover {
-  width: 150px;
+/* Saved Gifts page */
+
+.hbs-container {
+  background: url("/assets/snowflake-tile.jpg");
+  background-size: repeat;
+  background-color: rgba(245, 245, 245, 1)
 }
 
-.makeup-cover {
-  width: 150px;
+#saved-heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.cookbook-cover {
-  width: 150px;
+.hbs-heading {
+  flex: 0 1 50%;
+  color: darkslategray;
+  border-radius: 5px;
+  background-color: rgba(245, 245, 245, 0.9); 
+  box-shadow: 2px 2px 4px 8px rgba(245, 245, 245, 0.9);
+  text-shadow: 3px 3px 10px lightslategray;
 }
 
-.games-cover {
-  width: 150px;
+.uk-form-label {
+  margin-left: 50px;
+}
+
+.uk-input {
+  width: 300px;
+}
+
+#resultFlex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hbs-results {
+  flex: 0 1 auto;
+  margin-top: 25px;
+  width: 50%;
+  font-size: 20px;
+}
+
+.uk-card-body {
+  background-color: rgba(245, 245, 245, 0.9);
+  font-weight: bold;
+  margin-top: 3px;
+  min-width: 300px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px 8px rgba(245, 245, 245, 0.9); 
+  text-shadow: 1px 1px 14px lightslategray;
+}
+
+.gift-info p {
+  font-weight: lighter;
+}
+
+button.delGift {
+  border-radius: 5px;
+  box-shadow: 1px 1px 3px 3px rgba(233, 84, 84, 1);
+  text-shadow: 1px 1px 12px whitesmoke;
 }

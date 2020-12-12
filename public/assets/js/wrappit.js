@@ -12,9 +12,10 @@ $(document).ready(function() {
     getMakeup();
     let gamesArray = [];
     getGames();
-
-    let userInfo, UserId;
     let allUsers = [];
+    getUsers();
+    let userInfo, UserId;
+    
     let searchBooks = false;
     let searchMovies = false;
     let searchHome = false;
@@ -25,7 +26,7 @@ $(document).ready(function() {
 
 // Event listeners
     // "Next" button listener (new user account modal)
-    $(document).on("click", "#login", saveUser);
+    $(document).on("click", "button#login", saveUser);
     // Checkbox listeners
     $(document).on("click", "#books", function() { searchBooks = true; });
     $(document).on("click", "#movies", function() { searchMovies = true; });
@@ -39,7 +40,7 @@ $(document).ready(function() {
     $(document).on("click", "button.saveGift", saveGift);
     // "Next" button listener (view saved gifts modal)
     $(document).on("click", "#saved", getSavedGifts);
-
+    
 // Gift functions
 
 // All get* functions - making the selected API calls and populating the corresponding arrays
@@ -228,8 +229,9 @@ $(document).ready(function() {
                     textDiv.append(authorDiv);
                     let descDiv = $("<div class='bookDesc'>" + booksArray[i].description + "</div>");
                     textDiv.append(descDiv);
-                    let saveBtn = $("<button type='submit' class='saveGift'>");
-                    saveBtn.text("Save to the Gift List");
+                    let saveBtn = $("<button type='submit' class='uk-button uk-button-secondary saveGift'>");
+                    saveBtn.text("Save Gift");
+                    saveBtn.attr("style", "border-radius=5px;")
                     textDiv.append(saveBtn); 
                 bookDiv.append(textDiv);
             resultsDiv.append(bookDiv);
@@ -265,12 +267,13 @@ $(document).ready(function() {
                 movieDiv.append(movieDesc);
 
                 let textDiv = $("<div class='movieInfo'>");
-                    let title = $("<div class='text-bold'>" + moviesArray[i].title + "</div>");
+                    let title = $("<div class='text-bold title'>" + moviesArray[i].title + "</div>");
                     textDiv.append(title);
                     let descDiv = $("<div class='movieDesc'>" + moviesArray[i].description + "</div>");
                     textDiv.append(descDiv);
-                    let saveBtn = $("<button type='submit' class='saveGift'>");
-                    saveBtn.text("Save to the Gift List");
+                    let saveBtn = $("<button type='submit' class='uk-button uk-button-secondary saveGift'>");
+                    saveBtn.text("Save Gift");
+                    saveBtn.attr("style", "border-radius=5px;")
                     textDiv.append(saveBtn);
                 movieDiv.append(textDiv);
             resultsDiv.append(movieDiv);
@@ -286,20 +289,21 @@ $(document).ready(function() {
         resultsDiv.empty();
         for (let i = 0; i < homeArray.length; i++) {
             let homeDiv = $("<div class='home'>");
-                let imageDiv = $("<div class='homeImg'>");
-                    let homeImg = $("<img class='home-cover'>");
+                let imageDiv = $("<div class='ebayImg homeImg'>");
+                    let homeImg = $("<img class='ebay-cover home-cover'>");
                     homeImg.attr("src", homeArray[i].image);
                     homeImg.attr("alt", "Image of " + homeArray[i].title);
                     imageDiv.append(homeImg);
                 homeDiv.append(imageDiv);
 
-                let titleDiv = $("<div class='homeInfo'>");
-                    let titleLink = $("<a class='text-bold'>" + homeArray[i].title + "</a>");
+                let titleDiv = $("<div class='ebayInfo homeInfo'>");
+                    let titleLink = $("<a class='text-bold title'>" + homeArray[i].title + "</a>");
                     titleLink.attr("href", homeArray[i].url);
                     titleLink.attr("target", "_blank");
                     titleDiv.append(titleLink);
-                    let saveBtn = $("<button type='submit' class='saveGift'>");
-                    saveBtn.text("Save to the Gift List");
+                    let saveBtn = $("<button type='submit' class='uk-button uk-button-secondary saveGift'>");
+                    saveBtn.text("Save Gift");
+                    saveBtn.attr("style", "border-radius=5px;")
                     titleDiv.append(saveBtn); 
                 homeDiv.append(titleDiv);
             resultsDiv.append(homeDiv);
@@ -315,20 +319,21 @@ $(document).ready(function() {
         resultsDiv.empty();
         for (let i = 0; i < cookingArray.length; i++) {
             let cookingDiv = $("<div class='cooking'>");
-                let imageDiv = $("<div class='cookingImg'>");
-                    let cookingImg = $("<img class='cookbook-cover'>");
+                let imageDiv = $("<div class='ebayImg cookingImg'>");
+                    let cookingImg = $("<img class='ebay-cover cookbook-cover'>");
                     cookingImg.attr("src", cookingArray[i].image);
                     cookingImg.attr("alt", "Image of " + cookingArray[i].title);
                     imageDiv.append(cookingImg);
                 cookingDiv.append(imageDiv);
 
-                let titleDiv = $("<div class='cookbookInfo'>");
-                    let titleLink = $("<a class='text-bold'>" + cookingArray[i].title + "</a>");
+                let titleDiv = $("<div class='ebayInfo cookbookInfo'>");
+                    let titleLink = $("<a class='text-bold title'>" + cookingArray[i].title + "</a>");
                     titleLink.attr("href", cookingArray[i].url);
                     titleLink.attr("target", "_blank");
                     titleDiv.append(titleLink);
-                    let saveBtn = $("<button type='submit' class='saveGift'>");
-                    saveBtn.text("Save to the Gift List");
+                    let saveBtn = $("<button type='submit' class='uk-button uk-button-secondary saveGift'>");
+                    saveBtn.text("Save Gift");
+                    saveBtn.attr("style", "border-radius=5px;")
                     titleDiv.append(saveBtn); 
                 cookingDiv.append(titleDiv);
             resultsDiv.append(cookingDiv);
@@ -344,20 +349,21 @@ $(document).ready(function() {
         resultsDiv.empty();
         for (let i = 0; i < makeupArray.length; i++) {
             let makeupDiv = $("<div class='makeup'>");
-                let imageDiv = $("<div class='makeupImg'>");
-                    let makeupImg = $("<img class='makeup-cover'>");
+                let imageDiv = $("<div class='ebayImg makeupImg'>");
+                    let makeupImg = $("<img class='ebay-cover makeup-cover'>");
                     makeupImg.attr("src", makeupArray[i].image);
                     makeupImg.attr("alt", "Image of " + makeupArray[i].title);
                     imageDiv.append(makeupImg);
                 makeupDiv.append(imageDiv);
 
-                let titleDiv = $("<div class='makeupInfo'>");
-                    let titleLink = $("<a class='text-bold'>" + makeupArray[i].title + "</a>");
+                let titleDiv = $("<div class='ebayInfo makeupInfo'>");
+                    let titleLink = $("<a class='text-bold title'>" + makeupArray[i].title + "</a>");
                     titleLink.attr("href", makeupArray[i].url);
                     titleLink.attr("target", "_blank");
                     titleDiv.append(titleLink);
-                    let saveBtn = $("<button type='submit' class='saveGift'>");
-                    saveBtn.text("Save to the Gift List");
+                    let saveBtn = $("<button type='submit' class='uk-button uk-button-secondary saveGift'>");
+                    saveBtn.text("Save Gift");
+                    saveBtn.attr("style", "border-radius=5px;")
                     titleDiv.append(saveBtn); 
                 makeupDiv.append(titleDiv);
             resultsDiv.append(makeupDiv);
@@ -373,20 +379,21 @@ $(document).ready(function() {
         resultsDiv.empty();
         for (let i = 0; i < gamesArray.length; i++) {
             let gamesDiv = $("<div class='games'>");
-                let imageDiv = $("<div class='gamesImg'>");
-                    let gamesImg = $("<img class='games-cover'>");
+                let imageDiv = $("<div class='ebayImg gamesImg'>");
+                    let gamesImg = $("<img class='ebay-cover games-cover'>");
                     gamesImg.attr("src", gamesArray[i].image);
                     gamesImg.attr("alt", "Image of " + gamesArray[i].title);
                     imageDiv.append(gamesImg);
                 gamesDiv.append(imageDiv);
 
-                let titleDiv = $("<div class='gamesInfo'>");
-                    let titleLink = $("<a class='text-bold'>" + gamesArray[i].title + "</a>");
+                let titleDiv = $("<div class='ebayInfo gamesInfo'>");
+                    let titleLink = $("<a class='text-bold title'>" + gamesArray[i].title + "</a>");
                     titleLink.attr("href", gamesArray[i].url);
                     titleLink.attr("target", "_blank");
                     titleDiv.append(titleLink);
-                    let saveBtn = $("<button type='submit' class='saveGift'>");
-                    saveBtn.text("Save to the Gift List");
+                    let saveBtn = $("<button type='submit' class='uk-button uk-button-secondary saveGift'>");
+                    saveBtn.text("Save Gift");
+                    saveBtn.attr("style", "border-radius=5px;")
                     titleDiv.append(saveBtn); 
                 gamesDiv.append(titleDiv);
             resultsDiv.append(gamesDiv);
@@ -396,18 +403,111 @@ $(document).ready(function() {
     }
 
     
+// Email validation function
+
+function IsEmail(email) {
+    const regex = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+    if(email.match(regex)) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
 // CRUD - Database functions
     
 // CREATE DB record - POST method 
     
     // Create a new user account (new row in the 'users' table)
-    function saveUser() {
+    function saveUser(e) {
+        e.preventDefault();
         userInfo = {
             username: $("input.username").val().trim(),
             email: $("input.email").val().trim()
         };
-        
+
+        const isEmail = IsEmail(userInfo.email);
+        const validation = $("#valid");
+        const warning = $("<div class='warning'>");
+
+        if (userInfo.username.length < 1 || userInfo.username.length > 100) {
+            warning.text("Your Username is not valid! \n Please try again.");
+            validation.prepend(warning);
+        } else if (!isEmail) {
+            warning.text("Your Email is not valid! \n Please try again.");
+            validation.prepend(warning);
+        } else if (allUsers.length > 0) {      
+                for (let i = 0; i < allUsers.length; i++) {
+                    if (allUsers[i].username === userInfo.username || 
+                        allUsers[i].email === userInfo.email) {
+                            warning.text(`You already have an account. \n 
+                                Your login is: \n
+                                Username: ${allUsers[i].username} \n 
+                                Email: ${allUsers[i].email}`);
+                            validation.prepend(warning);
+                            break;
+                    } else if (i = allUsers.length-1) {
+                        $.post("/api/user", userInfo, function(newUser){
+                            console.log(newUser);
+                            UserId = newUser.id; 
+                        });                      
+                    } else {
+                        continue;
+                    }
+                }
+        } else {
+            $.post("/api/user", userInfo, function(newUser){
+            console.log(newUser);
+            UserId = newUser.id; 
+            });
+        }
+    }
+
+    // Create a new gift record (a row in "gifts" table)
+    function saveGift(e) {
+        e.preventDefault();
+        let user = UserId;
+        let btn = $(this);
+        let gift = {};
+        if (btn.parent('.bookInfo')) {
+            gift = {
+                gift: btn.siblings('.title').text(),
+                author: btn.siblings('.author').text(),
+                gift_desc: btn.siblings('.bookDesc').text(),
+                gift_url: btn.siblings('.title').attr('href'),
+                image_url: btn.parent('.bookInfo').siblings('.bookImg').children('.book-cover').attr('src'),
+                UserId: user
+            };
+        } else if (btn.parent('.movieInfo')) {
+            console.log(btn.parent('.movieInfo').siblings('.movie-description').children('.movieReview').children('.review').attr('href'));
+            gift = {
+                gift: btn.siblings('.title').text(),
+                author: '',
+                gift_desc: btn.siblings('.movieDesc').text(),
+                gift_url: btn.parent('.movieInfo').siblings('.movie-description').children('.movieReview').children('.review').attr('href'),
+                image_url: btn.parent('.movieInfo').siblings('.movie-description').children('.movieImg').children('.movie-cover').attr('src'),
+                UserId: user
+            };
+        } else { 
+            gift = {
+                gift: btn.siblings('.title').text(),
+                author: '',
+                gift_desc: '',
+                gift_url: btn.siblings('.title').attr('href'),
+                image_url: btn.parent('.ebayInfo').siblings('.ebayImg').children('.ebay-cover').attr('src'),
+                UserId: user
+            };
+        }
+        $.post("/api/gift", gift, function(newGift){
+            console.log(newGift);
+            btn.text("Gift saved!");
+        });
+    }
+
+// READ DB - GET method
+
+    // Get all users from the database
+    function getUsers() {
         $.get("/api/users", function(users){
             if (users.length > 0) {
                 allUsers = users; 
@@ -415,113 +515,19 @@ $(document).ready(function() {
                 allUsers = [];
             }
         });
-
-        if (allUsers.length > 0) {      
-            for (let i = 0; i < allUsers.length; i++) {
-                if (allUsers[i].username === userInfo.username || 
-                    allUsers[i].email === userInfo.email) {
-                        console.log(
-                            `You already have an account. \n 
-                            Your account login is: \n ?
-                            Username: ${allUsers[i].username} \n 
-                            Email: ${allUsers[i].email}`
-                        );
-                        break;
-                } else if (i = allUsers.length-1) {
-                    $.post("/api/user", userInfo, function(newUser){
-                        console.log(newUser);
-                        UserId = newUser.id; 
-                    });                                
-                } else {
-                    continue;
-                }
-            }
-        } else {
-            $.post("/api/user", userInfo, function(newUser){
-                console.log(newUser);
-                UserId = newUser.id; 
-            });
-        }            
     }
-
-    // Create a new gift record (a row in "gifts" table)
-    function saveGift(e) {
-        e.preventDefault();
-        const gift = {
-            gift: $(this).siblings('.title').text(),
-            gift_desc: $(this).siblings('.bookDesc').text(),
-            UserId: UserId
-        };
-        $.post("/api/gift", gift, function(newGift){
-            console.log(newGift);
-            $(this).text("Gift Saved!");
-        });
-    }
-
-// READ DB - GET method
     
-    // Get all users
-    function getAllUsers() {
-        $.get("/api/users", function(users) {
-            console.log(users);
-        });
-    }
-
-    // Get one user
-    function getOneUser() {
-        $.get("/api/user", function(user) {
-            console.log(user);
-        });
-    }
-
     // Get all gifts for a specific user
-    function getSavedGifts(username) {
-        $.get("/api/gifts", function(gifts) {
-            console.log(gifts);
-            if (!gifts || !gifts.length) {
-                displayEmpty(username);
-            } else {
-                location.redirect("/api/saved");
-            }
+    function getSavedGifts() {
+        let username = $("input.username2").val().trim();
+        console.log(username);
+        let query = {
+            url: "/api/gifts/" + username
+        }
+        $.get(query.url, function(data) {
+            console.log(data);
+            location.replace(query.url);
         });
     }
-
-    function displayEmpty(username) {
-        const pageContainer = $(".container");
-        const partial = "";
-        if (username) {
-          partial = " for " + username;
-        }
-        pageContainer.empty();
-        const messageH2 = $("<h2>");
-        messageH2.css({ "text-align": "center", "margin-top": "50px" });
-        messageH2.html("No saved gifts yet" + partial + ", please go to <a href='/#modal-group-2'>search page</a> to get started.");
-        pageContainer.append(messageH2);
-      }
-
-// UPDATE DB - PUT method
-
-    // function updateOneGift() {
-    //     const gift = {
-    //         gift: $(this).siblings('.title').text(),
-    //         gift_desc: $(this).siblings('.bookDesc').text(),
-    //         UserId: UserId
-    //     };
-    //     $.update("/api/gift", gift, function(updGift) {
-    //         console.log(updGift);
-    //     });
-    // }
-
-// DELETE DB record - DELETE method
-
-    // function deleteOneGift() {
-    //     const gift = {
-    //         id: id
-    //     };
-    //     $.delete("/api/gift", gift, function(delGift) {
-    //         console.log(delGift);
-    //     });
-    // }
-
     
 });

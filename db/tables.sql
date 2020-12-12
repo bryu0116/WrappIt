@@ -8,11 +8,7 @@ CREATE TABLE gifts (
     id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
     gift VARCHAR(255) NOT NULL,
     gift_desc VARCHAR(255),
+    gift_url VARCHAR(255),
+    img_url VARCHAR(255),
     FOREIGN KEY (user_id) REFERENCES users(id)
-)
-
-CREATE TABLE urls (
-    id int PRIMARY KEY NOT NULL AUTO_INCREMENT,
-    gift_url VARCHAR(255) NOT NULL,
-    FOREIGN KEY (gift_id) REFERENCES gifts(id)
 )
