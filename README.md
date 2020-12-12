@@ -17,7 +17,6 @@ The WrappIt App is for users who are having trouble finding that perfect gift. O
 ### Results
 <img src="public/assets/WrappIt04.png" alt="WrappIt App Results">
 
-
 ## Built With
 * [UIkit](https://getuikit.com/) - Open Source CSS framework
 * [New York Times - Books](https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=VygNZrSBD3hbAKYqxo7V4fGEvJSq8aux) - New York Times API for Books List
@@ -26,6 +25,19 @@ The WrappIt App is for users who are having trouble finding that perfect gift. O
 * [eBay - Cooking](https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=cookbooks&AvailableItemsOnly=true&MaxEntries=100) - eBay API for Cooking, MakeUp, Video Games & Consoles.
 * [eBay - Makeup](https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=makeup&AvailableItemsOnly=true&MaxEntries=100) - eBay API for MakeUp, Video Games & Consoles.
 * [eBay - Video Games & Consoles](https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=games&AvailableItemsOnly=true&MaxEntries=95) - eBay API for Video Games & Consoles.
+
+## Heroku 
+To view the WrappIt application, click here:
+
+## Licence
+![License](https://img.shields.io/badge/License-mit-blue.svg "License Badge")
+
+[MIT License](http://opensource.org/licenses/mit-license.php)
+
+## Contributors
+[Suzanne Givnish](https://github.com/suzygiv)
+[Bohdan Pechenyak](https://github.com/BohdiCave)
+[Brandon Ryu](https://github.com/bryu0116e)
 
 ## Contributors
 * **Suzanne Givnish** - UI (JavaScript, HTML, CSS, jQuery) / views (handlebars)
