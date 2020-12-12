@@ -11,7 +11,7 @@ Ahh, the holidays, the time of year when you can't figure out what to buy your l
 - [WrappIt Screenshots](#Screenshots)
 - [Built With](#Built)
 - [Heroku](#Heroku)
-- [Licence](#Licence)
+- [License](#License)
 - [Contributors](#Contributors)
 - [GitHub](#GitHub) 
 
