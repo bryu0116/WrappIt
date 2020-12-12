@@ -1,13 +1,16 @@
 # WrappIt
+
 ## Overview
 Ahh, the holidays, the time of year when you can't figure out what to buy your loved ones. With our app, WrappIt, we make it easy to find that perfect gift. Just select that special person's top 3 interests from our categories of gifts and we'll wrap up a list of gifts specific to those interests. No need to fret, just WrappIt and gift it
 
 ## Table of Contents
+- [Overview](#Overview)
 - [Description](#Description)
 - [Installation](#Installation)
 - [Usage](#Usage)
-- [Screenshots](#WrappItScreenshots)
-- [BuiltWith](#BuiltWith)
+- [WrappIt Screenshots](#Screenshots)
+- [Built With](#Built)
+- [Heroku](#Heroku)
 - [Licence](#Licence)
 - [Contributors](#Contributors)
 - [GitHub Info](#GitHub) 
@@ -50,9 +53,24 @@ Once 'App listening on PORT: 8080' displays in your terminal, open your browser 
 * [eBay - Makeup](https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=makeup&AvailableItemsOnly=true&MaxEntries=100) - eBay API for MakeUp, Video Games & Consoles.
 * [eBay - Video Games & Consoles](https://open.api.ebay.com/shopping?callname=FindProducts&responseencoding=JSON&appid=SuzanneG-WrappIt-PRD-1f785c25d-fb2797a7&siteid=0&version=967&QueryKeywords=games&AvailableItemsOnly=true&MaxEntries=95) - eBay API for Video Games & Consoles.
 
+## Heroku 
+To view the WrappIt application, click here:
+https://intense-falls-86763.herokuapp.com/
+
+## Licence
+![License](https://img.shields.io/badge/License-mit-blue.svg "License Badge")
+
+[MIT License](http://opensource.org/licenses/mit-license.php)
+
 ## Contributors
 * **Suzanne Givnish** - UI (JavaScript, HTML, CSS, jQuery) / views (handlebars)
 * **Bohdan Pechenyak** - Database setup / models
 * **Brandon Ryu** - Server / Controllers / config
 
 ## Github Info
+[Suzanne Givnish](https://github.com/suzygiv)
+[Bohdan Pechenyak](https://github.com/BohdiCave)
+[Brandon Ryu](https://github.com/bryu0116e)
+
+
+
