@@ -15,7 +15,7 @@ The WrappIt App is for users who are having trouble finding that perfect gift. O
 <img src="public/assets/WrappIt03.png" alt="WrappIt App Selecting Interests">
 
 ### Results
-<img src="public/assets/WrappIt 04.png" alt="WrappIt App Results">
+<img src="public/assets/WrappIt04.png" alt="WrappIt App Results">
 
 
 ## Built With
