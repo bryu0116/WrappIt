@@ -35,14 +35,16 @@
         </nav>
     </div>
 
-
+    <!-- Modal Container -->
     <div class="uk-cover-container">
         <canvas width="400 " height="600"></canvas>
+        <!-- Holiday Background -->
         <img src="./assets/holiday-background.jpg" alt="holiday-background" uk-cover> 
         <div class="uk-position-center" id="title">
             <h1 class="uk-heading-line uk-text-center"><span>Welcome to WrappIt</span></h1>
             <!-- CARD HEADER -->
             <div class="uk-card-header uk-text-center">
+                <!-- Modal Buttons -->
                 <p uk-margin>
                     <a class="uk-button uk-button-secondary" href="#modal-group-1" uk-toggle>Create WrappIt Account</a>
                     <a class="uk-button uk-button-default uk-hidden" href="#modal-group-2" uk-toggle>Modal 2</a>
@@ -50,7 +52,7 @@
                     <a class="uk-button uk-button-default uk-hidden" href="#modal-group-4" uk-toggle>Modal 4</a>
                 </p>
                 
-                <!-- Modal Group 1 -->
+                <!-- Create Account - Modal Group 1 -->
                 <div id="modal-group-1" uk-modal><div class="uk-modal-dialog">
                     <button class="uk-modal-close-default" type="button" uk-close></button>
                     <div class="uk-modal-header">
@@ -60,7 +62,7 @@
                         <div class="uk-margin">
                             <label class="uk-form-label" for="form-horizontal-text">Create Username</label>
                             <div class="uk-form-controls">
-                                <input class="uk-input username" id="form-horizontal-text" type="text" placeholder="Username">
+                                <input class="uk-input username" id="form-horizontal-text" type="text" id="username" placeholder="Username">
                             </div>
                         </div>
                         <div class="uk-margin">
@@ -147,7 +149,7 @@
                                 Email Address
                             </label>
                             <div class="uk-form-controls">
-                                <input class="uk-input email2" id="form-horizontal-text" type="text" placeholder="Password">
+                                <input class="uk-input email2" id="form-horizontal-text" type="text" placeholder="Email Address">
                             </div>
                         </div>
                     </form>
