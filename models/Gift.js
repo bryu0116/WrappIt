@@ -3,15 +3,29 @@ module.exports = function(sequelize, DataTypes) {
         gift: {
             type: DataTypes.STRING,
             allowNull: false,
-            validate: {
-                len: [1, 255]
-            }
+            // validate: {
+            //     len: [1, 255]
+            // }
+        },
+        author: {
+            type: DataTypes.STRING,
         },
         gift_desc: {
             type: DataTypes.STRING,
-            validate: {
-                len: [1, 255]
-            }
+        },
+        gift_url: {
+            type: DataTypes.STRING
+            // allowNull: false,
+            // validate: {
+            //     isUrl: true
+            // }
+        },
+        img_url: {
+            type: DataTypes.STRING
+            // allowNull: false,
+            // validate: {
+            //     isUrl: true
+            // }
         }
     }, {
         timestamps: false
@@ -22,10 +36,6 @@ module.exports = function(sequelize, DataTypes) {
           foreignKey: {
             allowNull: false
           }
-        });
-        
-        Gift.hasMany(models.Link, {
-            onDelete: "cascade"
         });
     };
     return Gift;

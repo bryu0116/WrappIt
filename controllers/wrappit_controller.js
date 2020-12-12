@@ -2,12 +2,14 @@ const express = require("express");
 const path = require("path");
 const router = express.Router();
 
-// Import the model (wrappit.js) to use its database functions.
+// Import the model (index.js) to use its database functions.
 const db = require("../models/index.js");
 
 // Create all our routes and set up logic within those routes where required.
+
+// GET routes
 router.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "../index.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 router.get("/api/users", function(req, res) {
@@ -16,22 +18,29 @@ router.get("/api/users", function(req, res) {
   });
 });
 
-router.get("/api/gifts", function(req, res) {
-  const query = {};
-  if (req.query.UserId) {
-    query.UserId = req.query.UserId;
+router.get("/api/gifts/:username", function(req, res) {
+  let query = {};
+  if (req.params) {
+    query.username = req.params.username;
   }
   db.Gift.findAll({
-    where: query,
-    include: [db.User]
-  }).then(function(gifts) {
-    res.json(gifts);
+    include: {
+      model: db.User,
+      where: {
+        username: query.username
+      },
+      require: true
+    }
+  }).then(function(data) {
+    res.render("results", {Gifts: data});
   });
 });
 
+
+// POST routes
 router.post("/api/user", function (req, res) {
   console.log(req.body);
-  db.User.create({
+  db.User.create({  
     username: req.body.username,
     email: req.body.email
   }).then(function(dbUser) {
@@ -43,29 +52,26 @@ router.post("/api/gift", function(req, res) {
   console.log(req.body);
   db.Gift.create({
     gift: req.body.gift,
+    author: req.body.author,
     gift_desc: req.body.gift_desc,
+    gift_url: req.body.gift_url,
+    image_url: req.body.img_url,
     UserId: req.body.UserId
   }).then(function(dbGift) {
       res.json(dbGift);
   }); 
 });
 
-// router.put("/api/burger/:id", function(req, res) {
-//   var condition = "id = " + req.params.id;
-
-//   console.log("condition", condition);
-
-//   burger.updateOne({
-//     devoured: req.body.devoured
-//   }, condition, function(result) {
-//     if (result.changedRows == 0) {
-//       // If no rows were changed, then the ID must not exist, so 404
-//       return res.status(404).end();
-//     } else {
-//       res.status(200).end();
-//     }
-//   });
-// });
+// DELETE route
+router.delete("/api/gift/:id", function(req, res) {
+  db.Gift.destroy({
+    where: {
+      id: req.params.id
+    }
+  }).then(function(dbGift) {
+    res.json(dbGift);
+  });
+});
 
 // Export routes for server.js to use.
 module.exports = router;

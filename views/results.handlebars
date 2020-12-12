@@ -1,21 +1,45 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Saved gifts for {{username}}:</h2>
-            {{#each gifts}}
-                <div class='gift'> 
-                    <div class='gift-image'>
-                        <img src="{{image_url}}" alt="Image of {{gift}}">                         
-                    </div>
-                    <div class='gift-info'>
-                        <a class='text-bold' href='{{gift_url}}' target='_blank'>{{gift}}</a>
-                        <p>{{gift_desc}}</p>                
-                    </div>
-                </div>
-
-                <button data-id="{{id}}" class="delquote">Delete</button>
-            {{/each}}
-        
-        </div>
+<div class="hbs-container">
+    <div class="uk-text-center" id="saved-heading">
+        <div>&nbsp;</div>
+        <h1 class="uk-text-center hbs-heading">Saved gifts</h1>
+        <div>&nbsp;</div>
     </div>
-</div>
+    <!-- Results -->
+    <div id="resultFlex">
+        {{#each Gifts}}
+        <div id="results-div{{dataValues.id}}" class="hbs-results">
+            <div class="uk-card uk-card-default uk-card-body">
+                {{#if dataValues.img_url}}
+                <div class='gift-image'>
+                    <img src="{{dataValues.img_url}}" alt="Image of {{dataValues.gift}}">
+                </div>
+                {{/if}}
+                <div class='gift-info'>
+                    <a class='text-bold' href='{{dataValues.gift_url}}' target='_blank'>
+                        {{dataValues.gift}}
+                    </a>
+                    {{#if dataValues.author}}<p>{{dataValues.author}}</p>{{/if}}
+                    {{#if dataValues.gift_desc}}<p>{{dataValues.gift_desc}}</p>{{/if}}
+                </div>
+                <br>              
+                <button type="submit" data-id="{{dataValues.id}}" class="uk-button uk-button-default uk-button-danger delGift">
+                    Delete from the list  
+                </button>                
+            </div>
+        </div>        
+        {{/each}}
+    </div>
+    <div style="height: 150px;">
+    &nbsp;
+    </div>
+</div> 
+
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery.js"></script>
+<!-- FontAwesome -->
+<script src="https://kit.fontawesome.com/941444bb10.js" crossorigin="anonymous"></script>
+<!-- UIkit JS -->
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.10/dist/js/uikit-icons.min.js"></script>
+<!-- Own JS -->
+<script src="/assets/js/saved.js"></script>
